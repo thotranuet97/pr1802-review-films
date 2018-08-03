@@ -1,0 +1,326 @@
+.film-slider{
+  margin-bottom: 60px;
+}
+.film-item{
+  .thumb{
+    overflow: hidden;
+    position: relative;
+    img{
+      transition: all ease-in-out 0.3s;
+    }
+    &:before{
+      content: '';
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 30%, #000000 100%);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+  .info{
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px 15px;
+    .rating{
+      color: #fff;
+      i{
+        color: yellow;
+        margin-right: 10px;
+      }
+    }
+    h3{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-size: 22px;
+      font-weight: 600;
+      a{
+        color: #fff;
+        transition: 0.3s;
+        &:hover{
+          opacity: 0.8;
+          text-decoration: none;
+        }
+      }
+    }
+    .genre{
+      margin-bottom: 10px;
+      li{
+        list-style: none;
+        display: inline-block;
+        &:after{
+          color: #fff;
+          content: ',';
+        }
+        &:last-child{
+          &:after{
+            content: '';
+          }
+        }
+        a{
+          color: #fff;
+          transition: 0.3s;
+          font-size: 13px;
+          font-style: italic;
+          &:hover{
+            opacity: 0.8;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .actors{
+      color: #fff;
+      span{
+        font-weight: 600;
+        margin-right: 10px;
+      }
+    }
+  }
+  &:hover{
+    .thumb{
+      img{
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.film-tabs{
+  margin-bottom: 60px;
+  .film-heading{
+    text-transform: capitalize;
+    font-size: 26px;
+    font-weight: 600;
+    position: relative;
+    line-height: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 20px;
+    a{
+      right: 0;
+      position: absolute;
+      font-size: 12px;
+      font-weight: 400;
+      color: #808080;
+      &:hover{
+        text-decoration: none;
+        color: $accent-color;
+      }
+      i{
+        font-size: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
+  .film-content{
+    .nav{
+      margin-bottom: 20px;
+      a{
+        font-size: 16px;
+        display: inline-block;
+        margin-right: 30px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid transparent;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+      a.active{
+        border-bottom: 1px solid $accent-color;
+      }
+    }
+    .film-item{
+      .info{
+        padding: 20px 30px;
+        h3{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.film-trailers{
+  background: asset_url('film-trailer-bg.jpg');
+  background-size: cover;
+  background-attachment: fixed ;
+  padding: 60px 0;
+  .film-heading{
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 26px;
+    font-weight: 600;
+    position: relative;
+    line-height: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #808080;
+    margin-bottom: 20px;
+    a{
+      right: 0;
+      position: absolute;
+      font-size: 12px;
+      font-weight: 400;
+      color: #808080;
+      &:hover{
+        text-decoration: none;
+        color: $accent-color;
+      }
+      i{
+        font-size: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
+  .film-content{
+    .trailer-item{
+      position: relative;
+      margin-bottom: 30px;
+      .info-trailer{
+        position: absolute;
+        bottom: 0;
+        overflow: hidden;
+        padding: 20px;
+        width: 100%;
+        background: rgba(#000, 0.7);
+        .film-thumb{
+          width: 100px;
+          float: left;
+        }
+        .film-info{
+          padding: 0 20px;
+          width: calc(100% - 180px);
+          float: left;
+          margin-top: 15px;
+          .title{
+            a{
+              text-transform: capitalize;
+              color: #fff;
+              font-size: 24px;
+              font-weight: bold;
+            }
+          }
+          .genres{
+            li{
+              display: inline-block;
+              &:after{
+                content: '/';
+                padding: 0 5px;
+                color: #fff;
+              }
+              &:last-child{
+                &:after{
+                  content: none;
+                }
+              }
+              a{
+                color: #fff;
+                font-weight: 300;
+              }
+            }
+          }
+        }
+        .mark{
+          margin-top: 10px;
+          float: left;
+          width: 80px;
+          height: 80px;
+          background: asset_url('star.png') no-repeat center;
+          display: flex;
+          background-size: cover;
+          justify-content: center;
+          align-items: center;
+          span{
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .col-small{
+      .trailer{
+        .play{
+          width: 32px;
+          top: calc(50% - 16px);
+          left: calc(50% - 16px);
+        }
+      }
+    }
+  }
+}
+
+.film-reviews{
+  padding: 60px 0;
+  .film-heading{
+    text-transform: capitalize;
+    font-size: 26px;
+    font-weight: 600;
+    position: relative;
+    line-height: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 20px;
+    a{
+      right: 0;
+      position: absolute;
+      font-size: 12px;
+      font-weight: 400;
+      color: #808080;
+      &:hover{
+        text-decoration: none;
+        color: $accent-color;
+      }
+      i{
+        font-size: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
+  .film-review-item{
+    margin-bottom: 30px;
+    overflow: hidden;
+    .thumb{
+      width: 100px;
+      float: left;
+      padding-right: 20px;
+    }
+    .info{
+      width: calc(100% - 100px);
+      float: left;
+      h3{
+        font-size: 22px;
+        margin-bottom: 10px;
+        a{
+          &:hover{
+            text-decoration: none;
+            color: #808080;
+          }
+        }
+      }
+      ul{
+        li{
+          display: inline-block;
+          list-style: none;
+          margin-right: 20px;
+          color: #808080;
+          a{
+           color: #808080;
+            &:hover{
+              color: $accent-color;
+              text-decoration: none;
+            }
+          }
+          i{
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,81 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+$title-color: #252525;
+$accent-color: #F26522;
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: $title-color;
+    font-size: 14px;
+}
+a{
+    cursor: pointer;
+    transition: 0.3s;
+    color: $title-color;
+    &:hover{
+        color: $accent-color;
+    }
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.text-content{
+    line-height: 2;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.btn{
+    border-radius: 0;
+    background: #F26522;
+    color: #fff;
+    transition: 0.3s;
+    &:hover{
+        background: $title-color;
+    }
+}
+.form-control{
+    border-radius: 0;
+    background: #fafafa;
+}
+
+@import "header";
+@import "footer";
+@import "review";
+@import "archive";
+@import "film";
+@import "index";
+
+.account{
+    background: #E5E5E5;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form-login{
+        background: #fff;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 650px;
+        text-align: center;
+        h3{
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .btn-submit{
+            background: $title-color;
+            width: 100%;
+            &:hover{
+                background: rgba($title-color, 0.8)
+            }
+        }
+    }
+}

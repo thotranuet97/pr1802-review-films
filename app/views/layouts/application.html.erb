@@ -5,11 +5,63 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag "https://use.fontawesome.com/releases/v5.2.0/css/all.css" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div id="canvas-sidebar">
+        <div class="close-canvas">
+          <a href="#"><i class="fas fa-times"></i></a>
+        </div>
+    </div>
+  <header>
+    <div class="main-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 align-self-center">
+            <div class="header-left">
+              <div class="navbar-toggle">
+                <%= link_to "#" do %>
+                <%= image_tag("menu-button.png") %>
+                <% end %>
+              </div>
+              <h1 class="logo">
+                <%= link_to "#" do %>
+                <%= image_tag("logo.png") %>
+                <% end %>
+              </h1>
+            </div>
+          </div>
+          <div class="col-md-6 align-self-center">
+            <div class="header-center">
+              <form action="/">
+                <select name="" id="" class="custom-select">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <input type="text" class="form-control input-field">
+                <button type="submit" class="btn-submit"><i class="fas fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-3 align-self-center">
+            <div class="header-right">
+                <span><i class="far fa-user"></i> Welcome Guest !</span><a href="#">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
     <%= yield %>
+  <footer>
+    <div class="footer-btm">
+      <p>© 2018 Your Company. All Rights Reserved.</p>
+    </div>
+  </footer>
   </body>
 </html>
