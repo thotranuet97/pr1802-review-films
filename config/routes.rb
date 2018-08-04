@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get "admin" => "pages#admin"
+  namespace :admin do
+    get '/' => 'users#index'
+  end
 
   root "pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
