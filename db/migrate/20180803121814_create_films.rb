@@ -10,6 +10,7 @@ class CreateFilms < ActiveRecord::Migration[5.2]
       t.string :actors
       t.string :directors
       t.references :user, foreign_key: true
+      
       t.timestamps
     end
   end
