@@ -1,0 +1,65 @@
+<%= form_for [:admin, @film] do |f| %>
+  <div class="row">
+    <div class = "col-md-8">
+      <div class = "block-section">
+        <h3>Movies name</h3>
+        <%= f.text_field :name, class: 'form-control', placeholder: 'Enter film title' %>
+      </div>
+      <div class = "block-section">
+        <h3>Movies introduction</h3>
+        <%= f.cktext_area :introduction, class: 'form-control' %>
+      </div>
+      <div class = "block-section">
+        <h3>Movies trailer</h3>
+        <%= f.url_field :trailer, class: 'form-control', placeholder: 'Enter video url' %>
+        <h3>Movies trailer thumbnail</h3>
+        <%= f.file_field :video_thumbnail %>
+        <%= f.hidden_field :video_thumbnail_cache %>
+        <%= image_tag @film.video_thumbnail_url, class: "preview" if @film.video_thumbnail? %>
+      </div>
+      <div class = "block-section">
+        <h3>Movies actor</h3>
+        <%= f.text_field :actors, class: 'form-control', placeholder: 'Enter actor' %>
+      </div>
+      <div class = "block-section">
+        <h3>Movies director</h3>
+        <%= f.text_field :directors, class: 'form-control', placeholder: 'Enter director' %>
+      </div>
+    </div>
+    <div class = "col-md-4">
+      <div class="block-section">
+        <h3>Movies categories</h3>
+        <ul class="list-cat">
+          <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cat| %>
+            <li>
+              <%= cat.check_box %>
+              <%= cat.label %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="block-section">
+        <h3>Country</h3>
+        <%= f.text_field :country, class: 'form-control', placeholder: 'Enter movies country' %>
+      </div>
+      <div class="block-section">
+        <h3>Release date</h3>
+        <%= f.date_field :release_date, class: 'form-control' %>
+      </div>
+      <div class = "block-section">
+        <h3>Movies thumbnail</h3>
+        <%= f.file_field :thumbnail %>
+        <%= f.hidden_field :thumbnail_cache %>
+        <%= image_tag @film.thumbnail_url, class: "preview" if @film.thumbnail? %>
+        <h3>Movies poster</h3>
+        <%= f.file_field :poster %>
+        <%= f.hidden_field :poster_cache %>
+        <%= image_tag @film.poster_url, class: "preview" if @film.poster? %>
+      </div>
+      <div class="block-section">
+        <%= f.submit yield(:btn_title), class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+  </div>
+<% end %>

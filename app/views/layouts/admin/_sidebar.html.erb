@@ -2,19 +2,16 @@
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" href="#">
-          Dashboard <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          Categories
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          Films
-        </a>
+
+        <%= link_to "Films", admin_films_path, class: "nav-link" %>
+        <ul class="children">
+          <li class="nav-item">
+            <%= link_to "Create a movie", new_admin_film_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Categories movies", admin_categories_path, class: "nav-link" %>
+          </li>
+        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">

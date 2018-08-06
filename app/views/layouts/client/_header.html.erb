@@ -35,7 +35,7 @@
             <span><i class="far fa-user"></i> Welcome
               <%= logged_in? ? link_to(current_user.name, current_user) : "Guest" %>
             </span>
-            <%= logged_in? ? link_to("Logout", logout_path, method: delete) : link_to("Login", login_path) %>
+            <%= logged_in? ? link_to("Logout", logout_path, method: :delete) : link_to("Login", login_path) %>
           </div>
         </div>
       </div>

@@ -19,7 +19,6 @@ $(document).on('turbolinks:load', function() {
             }
         }
     });
-
     $('.navbar-toggle a').click(function(e){
         $('#canvas-sidebar').toggleClass('canvas-active');
         e.stopPropagation();
@@ -33,5 +32,4 @@ $(document).on('turbolinks:load', function() {
     $('.close-canvas a').click(function(){
         $('#canvas-sidebar').removeClass('canvas-active');
     });
-
-})
+});
