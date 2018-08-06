@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "/" => "users#index"
+    resources :categories
   end
 
   get "login", to: "sessions#new"
