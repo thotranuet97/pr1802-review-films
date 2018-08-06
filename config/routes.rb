@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     get '/' => 'users#index'
+    resources :categories
   end
 
   root "pages#home"

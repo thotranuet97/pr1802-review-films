@@ -1,0 +1,18 @@
+<tr>
+  <td class="title-table">
+    <span><%= category.name %></span>
+  </td>
+  <td>
+    <ul class="cat-action">
+      <li>
+        <%= link_to 'Edit', edit_admin_category_path(category.id) %>
+      </li>      
+      <li>
+        <%= link_to 'Delete', admin_category_path(category.id), method: :delete, data:{confirm: 'Are you sure?'} %>
+      </li>
+    </ul>    
+    <span>
+      Only admin to action
+    </span>
+  </td>
+</tr>

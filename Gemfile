@@ -18,6 +18,8 @@ else
   gem 'sqlite3'
 end
 
+gem 'will_paginate'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
