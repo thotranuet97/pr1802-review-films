@@ -22,7 +22,7 @@
 
 # Ignore uploaded files in development
 /storage/*
-
+Gemfile.lock
 /node_modules
 /yarn-error.log
 
