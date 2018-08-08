@@ -18,4 +18,5 @@
 //= require turbolinks
 //= require lity.min
 //= require owl.carousel.min
+//= require ckeditor/init
 //= require_tree .

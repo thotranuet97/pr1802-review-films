@@ -42,6 +42,21 @@ ul{
 .form-control{
     border-radius: 0;
     background: #fafafa;
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ced4da;
+    font-size: 12px;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: #ced4da;
+    font-size: 12px;  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: #ced4da;
+    font-size: 12px;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: #ced4da;
+    font-size: 12px;
+  }
 }
 
 @import "header";
@@ -78,4 +93,30 @@ ul{
             }
         }
     }
+}
+
+// Pagination
+.pagination{
+  margin-top: 40px;
+  justify-content: center;
+  span, em, a{
+    display: inline-block;
+    border: 1px solid #252525;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    margin: 0 5px;
+    font-weight: 600;
+    &:hover{
+      background: #252525;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  .disabled,.current{
+    background: #252525;
+    color: #fff;
+    text-decoration: none;
+    cursor: not-allowed;
+  }
 }

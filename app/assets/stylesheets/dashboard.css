@@ -1,6 +1,9 @@
 body {
   font-size: .875rem;
 }
+li{
+    list-style: none;
+}
 
 .feather {
   width: 16px;
@@ -39,8 +42,12 @@ body {
 }
 
 .sidebar .nav-link {
-  font-weight: 500;
+  font-weight: bold;
   color: #333;
+}
+
+.sidebar .nav-link:hover{
+    color: #007bff;
 }
 
 .sidebar .nav-link .feather {
@@ -55,6 +62,10 @@ body {
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
   color: inherit;
+}
+
+.sidebar .nav-item .children{
+    margin-left: 20px;
 }
 
 .sidebar-heading {
@@ -97,4 +108,31 @@ body {
 .form-control-dark:focus {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+.block-section{
+    margin-bottom: 40px;
+}
+.block-section h3{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.block-section .btn{
+    width: 100%;
+    background: #252525;
+}
+.block-section img.preview{
+    margin-top: 10px;
+    width: 100px;
+    height: auto;
+}
+.block-section .list-cat{
+    margin-left: 20px;
+    max-height: 150px;
+    overflow: auto;
+}
+.block-section .list-cat li{
+    margin-bottom: 5px;
 }

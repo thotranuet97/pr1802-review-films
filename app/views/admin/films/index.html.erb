@@ -1,0 +1,31 @@
+<table class="table cat-table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col" >#</th>
+    <th scope="col" >Name</th>
+    <th scope="col" >Categories</th>
+    <th scope="col" >Action</th>
+    <th scope="col" >Release date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @films.each.with_index(1) do |film, index| %>
+    <tr>
+      <td><%= index %></td>
+      <td><%= film.name %></td>
+      <td>
+        <% film.categories.each do |cat| %>
+          <%= link_to cat.name, admin_category_path(cat) %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to "Edit", edit_admin_film_path(film.id) %> | <%= link_to "Delete", admin_film_path(film.id), method: :delete, data:{confirm: "Are you sure ?"} %> | <a href="#">Review</a>
+      </td>
+      <td>
+        <%= film.release_date %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= will_paginate @films %>
