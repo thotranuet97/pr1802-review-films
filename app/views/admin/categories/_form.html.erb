@@ -1,9 +1,9 @@
 <%= form_for [:admin, @category] do |f| %>
-  <div class="post-create-title">
-    <h4>Category title</h4>
+  <div class="block-section">
+    <h3>Category title</h3>
     <%= f.text_field :name, class: "form-control", placeholder: "Enter category title" %>
   </div>
-  <div class="post-create-submit">
+  <div class="block-section">
     <%= f.submit yield(:btn_title), class: "btn btn-submit" %>
   </div>
 <% end %>

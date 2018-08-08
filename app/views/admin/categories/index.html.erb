@@ -7,19 +7,21 @@
         <%= render "form" %>
       </div>
       <div class="col-md-8">
-        <table class="table cat-table">
-          <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Count</th>
-          </tr>
-          </thead>
-          <tbody>
+        <div class="block-section">
+          <table class="table cat-table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Count</th>
+              </tr>
+            </thead>
+            <tbody>
             <%= render :partial => "category", :collection => @categories %>
-          </tbody>
-        </table>
-        <%= will_paginate @categories %>
+            </tbody>
+          </table>
+          <%= will_paginate @categories %>
+        </div>
       </div>
     </div>
   </div>
