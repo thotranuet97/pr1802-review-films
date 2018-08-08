@@ -11,8 +11,13 @@
   </head>
 
   <body>
-    <%= render ("layouts/client/menu") %>
-    <%= render ("layouts/client/header") %>
+    <%= render "layouts/client/menu" %>
+    <%= render "layouts/client/header" %>
+    <% flash.each do |message_type, message| %>
+      <div class="col-md-12">
+        <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+      </div>
+    <% end %>
     <%= yield %>
     <footer>
       <div class="footer-btm">

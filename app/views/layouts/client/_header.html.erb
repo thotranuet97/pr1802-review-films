@@ -6,12 +6,12 @@
           <div class="header-left">
             <div class="navbar-toggle">
               <%= link_to "#" do %>
-              <%= image_tag("menu-button.png") %>
+                <%= image_tag "menu-button.png" %>
               <% end %>
             </div>
             <h1 class="logo">
               <%= link_to "#" do %>
-              <%= image_tag("logo.png") %>
+                <%= image_tag "logo.png" %>
               <% end %>
             </h1>
           </div>
@@ -32,7 +32,10 @@
         </div>
         <div class="col-md-3 align-self-center">
           <div class="header-right">
-              <span><i class="far fa-user"></i> Welcome Guest !</span><a href="#">Login</a>
+            <span><i class="far fa-user"></i> Welcome
+              <%= logged_in? ? link_to(current_user.name, current_user) : "Guest" %>
+            </span>
+            <%= logged_in? ? link_to("Logout", logout_path, method: delete) : link_to("Login", login_path) %>
           </div>
         </div>
       </div>
