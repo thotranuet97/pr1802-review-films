@@ -18,7 +18,7 @@ else
   gem 'sqlite3'
 end
 
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -39,8 +39,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-gem 'will_paginate'
 
 # Use ActiveStorage variant
 gem 'carrierwave'
