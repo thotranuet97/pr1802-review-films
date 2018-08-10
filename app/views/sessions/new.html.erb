@@ -19,8 +19,10 @@
         <%= f.check_box :remember_me, class: "custom-control-input" %>
         <span class="custom-control-label">Remember me </span>
       <% end %>
-      <%= f.submit "Log me in!",
-        class: "btn btn-lg btn-primary btn-block" %>
+      <div class="form-group">
+        <%= f.submit "Log me in!",
+          class: "btn btn-lg btn-primary btn-block" %>
+      </div>
     </fieldset>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
