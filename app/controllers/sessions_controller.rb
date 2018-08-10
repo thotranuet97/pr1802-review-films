@@ -3,28 +3,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-    downcase_email params[:email]
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
+    user = User.find_by email: params[:email]&.downcase!
+    if user&.authenticate params[:password]
       log_in user
-      params[:remember_me] == "1" ? remember(user) : forget(user)
-      redirect_to root_url, notice: "Login Success!"
+      "1" == params[:remember_me] ? remember(user) : forget(user)
+      redirect_back_or root_url
     else
       flash.now[:danger] = "Invalid email/password combination"
-      render "new"
+      render :new
     end
   end
 
   def destroy
     log_out
     redirect_to root_url, notice: "Logout Success!"
-  end
-
-  private
-
-  def downcase_email email
-    if email
-      email.downcase!
-    end
   end
 end
