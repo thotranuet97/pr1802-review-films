@@ -3,16 +3,19 @@ class User < ApplicationRecord
   has_many :comments
   has_many :ratings
   has_many :rated_films, class_name: Film.name, through: :ratings
+  has_many :films
   has_many :reviews
 
   before_save :downcase_email
 
+  validates :name, presence: true, length: {minimum: 3}
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 50},
-    format: { with: VALID_EMAIL_REGEX },
-    uniqueness: { case_sensitive: false }
+    format: {with: VALID_EMAIL_REGEX},
+    uniqueness: {case_sensitive: false}
 
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
   has_secure_password
 
   def downcase_email

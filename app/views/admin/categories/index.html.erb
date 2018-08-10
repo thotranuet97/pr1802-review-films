@@ -1,5 +1,5 @@
-<% provide(:title, "All categories") %>
-<% provide(:btn_title, "Create category") %>
+<% provide :title, "All categories" %>
+<% provide :btn_title, "Create category" %>
 <div class="page-content container-fluid">
   <div class="page-content-item">
     <div class="row">
@@ -17,7 +17,7 @@
               </tr>
             </thead>
             <tbody>
-            <%= render :partial => "category", :collection => @categories %>
+              <%= render partial: "category", collection: @categories %>
             </tbody>
           </table>
           <%= will_paginate @categories %>
