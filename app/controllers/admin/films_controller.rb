@@ -1,8 +1,11 @@
-class Admin::FilmsController < ApplicationController
+class Admin::FilmsController < AdminController
   before_action :find_film, only: [:edit, :update, :show, :destroy]
-  layout "admin"
+
   def index
-    @films = Film.paginate(:page => params[:page], :per_page => 20)
+    @films = Film.paginate page: params[:page], per_page: 20
+  end
+
+  def show
   end
 
   def new
@@ -10,7 +13,7 @@ class Admin::FilmsController < ApplicationController
   end
 
   def create
-    @film = current_user.films.new(film_params)
+    @film = current_user.films.new film_params
     if @film.save
       flash[:notice] = "film created !"
       redirect_to admin_films_path
@@ -24,7 +27,7 @@ class Admin::FilmsController < ApplicationController
   end
 
   def update
-    if @film.update_attributes(film_params)
+    if @film.update film_params
       flash[:alert] = "Film updated !"
       redirect_to admin_films_path
     else
@@ -38,14 +41,16 @@ class Admin::FilmsController < ApplicationController
     redirect_to admin_films_path
   end
 
-  private 
+  private
 
   def film_params
-    params.require(:film).permit(:name, :introduction, :poster, :poster_cache, :thumbnail, :thumbnail_cache, :trailer,
-      :video_thumbnail, :video_thumbnail_cache, :actors, :directors, :country, :release_date, category_ids:[])
+    params.require(:film).permit(:name, :introduction, :poster,
+      :poster_cache, :thumbnail, :thumbnail_cache, :trailer, :video_thumbnail,
+      :video_thumbnail_cache, :actors, :directors, :country, :release_date,
+      category_ids: [])
   end
 
   def find_film
-    @film = Film.find_by(id: params[:id])
+    @film = Film.find_by id: params[:id]
   end
 end

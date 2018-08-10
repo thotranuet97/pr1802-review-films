@@ -1,14 +1,13 @@
-class Admin::CategoriesController < ApplicationController
-  layout "admin"
+class Admin::CategoriesController < AdminController
   before_action :find_category, only: [:edit, :update, :destroy]
 
   def index
-    @categories = Category.all.paginate(:page => params[:page], :per_page => 10)
+    @categories = Category.paginate page: params[:page], per_page: 10
     @category = Category.new
   end
 
   def create
-    @category = Category.new(category_params)
+    @category = Category.new category_params
     if @category.save
       flash[:notice] = "Category created !"
       redirect_to admin_categories_path
@@ -22,7 +21,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def update
-    if @category.update_attributes(category_params)
+    if @category.update category_params
       flash[:alert] = "Category updated !"
       redirect_to admin_categories_path
     else
@@ -42,6 +41,6 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def find_category
-    @category = Category.find_by(id: params[:id])
+    @category = Category.find_by id: params[:id]
   end
 end
