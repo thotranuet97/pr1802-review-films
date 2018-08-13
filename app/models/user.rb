@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :films
   has_many :reviews
 
+  attr_accessor :remember_token
   before_save :downcase_email
 
   validates :name, presence: true, length: {minimum: 3}
