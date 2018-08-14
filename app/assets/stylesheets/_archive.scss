@@ -130,6 +130,14 @@
         i{
           margin-left: 8px;
           font-size: 10px;
+    }
+    .archive-film-item{
+        overflow: hidden;
+        margin-bottom: 30px;
+        .thumb{
+            width: 25%;
+            float: left;
+            padding-right: 10px;
         }
         &:hover{
           text-decoration: none;
