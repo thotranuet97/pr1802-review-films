@@ -1,0 +1,68 @@
+.left-sidebar{
+  nav{
+    .left-sidebar-menu{
+      padding: 0;
+      margin: 0;
+      li{
+        position: relative;
+        list-style: none;
+        padding: 10px 0;
+        &:first-child{
+          padding-top: 0;
+        }
+        &:last-child{
+          padding-bottom: 0;
+        }
+        a{
+          text-transform: capitalize;
+          font-size: 20px;
+          display: block;
+          text-decoration: none;
+          transition: all ease-in-out 0.3s;
+          &:hover{
+            color: $accent-color;
+            i{
+              color: $accent-color;
+            }
+          }
+          i{
+            width: 27px;
+          }
+        }
+        .click-toggle{
+          position: absolute;
+          right: 0;
+          top: 6px;
+          width: 20px;
+          height: 42px;
+          text-align: center;
+          line-height: 42px;
+          cursor: pointer;
+          font-size: 20px;
+        }
+      }
+      .active{
+        >a{
+          color: $accent-color;
+          i{
+            color: $accent-color;
+          }
+        }
+        >i{
+          color: $accent-color;
+        }
+      }
+      .sub-menu{
+        display: none;
+        padding-top: 10px;
+        padding-left: 25px;
+        li{
+          padding: 8px 0;
+          a{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
