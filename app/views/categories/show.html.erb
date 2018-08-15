@@ -1,0 +1,19 @@
+<div class="archive-heading">
+  <div class="container">
+    <h2><%= @category.name %></h2>
+  </div>
+</div>
+<div class="archive-main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="filter">
+          Filter here 
+        </div>
+      </div>
+      <div class="col-md-9">
+        <%= render partial: "film", collection: @films %>
+      </div>
+    </div>
+  </div>
+</div>
