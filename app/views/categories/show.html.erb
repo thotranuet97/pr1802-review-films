@@ -1,18 +1,17 @@
 <div class="archive-heading">
   <div class="container">
-    <h2><%= @category.name %></h2>
+    <h2><%= link_to @category.name, category_path, class: "cat-show-link" %></h2>
   </div>
 </div>
 <div class="archive-main">
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <div class="filter">
-          Filter here 
-        </div>
+        <%= render "filter" %>
       </div>
       <div class="col-md-9">
         <%= render partial: "film", collection: @films %>
+        <%= will_paginate @films %>
       </div>
     </div>
   </div>

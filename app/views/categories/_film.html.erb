@@ -2,13 +2,15 @@
   <div class="thumb">
     <a href="#">
     <% if film.thumbnail.present? %>
-      <%= image_tag film.thumbnail_url %>
+      <a href="<%= film_path film %>">
+        <%= image_tag film.thumbnail_url %>
+      </a>
     <% end %>
     </a>
   </div>
   <div class="info">
     <h3 class="title">
-      <a href="#"><%= film.name %></a>
+      <%= link_to film.name, film_path film, class: "text-justify" %>
     </h3>
     <ul class="meta">
       <li>
@@ -18,13 +20,16 @@
         <% end %>
       </li>
       <li>
-        Rating
+        Rating: <%= film.average_ratings if film %>
       </li>
     </ul>
-    <p class="desc">
+    <span class="text-muted">Release date:
+      <%= film.release_date.strftime "%d-%m-%Y" %>
+    <span>
+    <div class="desc text-justify">
       <%= raw film.introduction.truncate 500 %>
-    </p>
-    <a href="#" class="readmore">View more
+    </div>
+    <a href="<%= film_path film %>" class="readmore">View more
       <i class="fas fa-arrow-right"></i>
     </a>
   </div>

@@ -1,4 +1,4 @@
-<a class="btn-quickview" data-toggle="modal" data-target="#reviewfilm" data-review-id="<%= @film.review.id %>">
+<a class="btn-quickview" data-toggle="modal" data-target="#reviewfilm" data-review-id="<%= @film.review.id if @film.review.present? %>">
   View review
 </a>
 <div class="modal fade" id="reviewfilm" tabindex="-1" role="dialog" aria-labelledby="reviewfilmTitle" aria-hidden="true">

@@ -14,6 +14,11 @@ User.create!(name:  "123",
     password_confirmation: password)
 end
 
+10.times do |n|
+  name = "catcat#{n+1}"
+  Category.create!(name:  name)
+end
+
 users = User.order(:created_at).take(6)
 10.times do
   name = Faker::Lorem.sentence(1)

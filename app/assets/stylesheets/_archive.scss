@@ -1,7 +1,7 @@
 // REVIEW
 .archive-heading{
   padding: 65px 0;
-  background: url('../images/review-archive.jpg');
+  background: asset_url('review-archive.jpg');
   background-size: cover;
   position: relative;
   &::before{
@@ -130,18 +130,6 @@
         i{
           margin-left: 8px;
           font-size: 10px;
-    }
-    .archive-film-item{
-        overflow: hidden;
-        margin-bottom: 30px;
-        .thumb{
-            width: 25%;
-            float: left;
-            padding-right: 10px;
-        }
-        &:hover{
-          text-decoration: none;
-          transform: translateX(10px);
         }
       }
     }

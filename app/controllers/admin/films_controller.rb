@@ -2,7 +2,7 @@ class Admin::FilmsController < AdminController
   before_action :find_film, only: [:edit, :update, :show, :destroy]
   def index
     @films = Film.paginate page: params[:page], per_page: 20
-    @films = @films.order_film
+    @films = @films.order_films
   end
 
   def show
