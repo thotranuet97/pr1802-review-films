@@ -32,4 +32,47 @@ $(document).on('turbolinks:load', function() {
     $('.close-canvas a').click(function(){
         $('#canvas-sidebar').removeClass('canvas-active');
     });
+
+    // Rating js
+    var rate = $('#rate').attr('data-rate');
+    $("#rateYo").rateYo({
+        starWidth: "20px",
+        ratedFill: "#F9D641",
+        numStars: 10,
+        maxValue: 10,
+        rating: rate,
+        readOnly: true,
+        halfStar: true
+    });
+
+    var $ratefilm = $('#ratefilm').rateYo({
+        starWidth: "20px",
+        ratedFill: "#F9D641",
+        maxValue: 10,
+        numStars: 10,
+        fullStar: true
+    });
+    $('#ratefilm').click(function () {
+        var rating = $ratefilm.rateYo("rating");
+        $('#rate-value').val(rating);
+        $('.message').html('You are rating film with '+rating+' stars.')
+    });
+    $('a.btn-quickview').click(function () {
+        var review_id = $(this).attr('data-review-id');
+        var href = $(this).attr('href');
+        $.ajax({
+            type: "GET",
+            url: href,
+            data: {
+                id_review: review_id
+            },
+            beforeSend: function(){
+                $('#review-content').addClass('loading');
+            },
+            success: function(){
+                $('#review-content').removeClass('loading');
+            },
+            dataType: "script",
+        })
+    })
 });

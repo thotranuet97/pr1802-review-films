@@ -19,6 +19,8 @@ else
   gem 'sqlite3'
 end
 
+gem 'mysql2'
+
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 # Use Puma as the app server
