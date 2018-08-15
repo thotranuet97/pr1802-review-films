@@ -21,8 +21,7 @@ end
 
 users = User.order(:created_at).take(6)
 10.times do
-  name = Faker::Lorem.sentence(1)
-  users.each {|user| user.films.create!(name: name)}
+  users.each {|user| user.films.create!(name: Faker::Lorem.sentence(1))}
 end
 
 users = User.order(:created_at).take(6)

@@ -1,10 +1,11 @@
 class Film < ApplicationRecord
   belongs_to :user
-  has_one :review
-  has_many :ratings
-  has_many :raters, through: :ratings, source: :user
-  has_many :film_categories
-  has_many :categories, through: :film_categories
+  has_one :review, dependent: :destroy
+  has_many :ratings, dependent: :destroy
+  has_many :raters, through: :ratings, source: :user, dependent: :destroy
+  has_many :film_categories, dependent: :destroy
+  has_many :categories, through: :film_categories, dependent: :destroy
+
   validates :name, presence: true
 
   mount_uploader :thumbnail, ThumbnailUploader
@@ -24,7 +25,7 @@ class Film < ApplicationRecord
   scope :filter_by_year, ->(year_params) do
     where "year(release_date) like ?", "#{year_params}"
   end
-  
+
   scope :directors_list, -> do
     select("directors").where("directors is not null")
       .distinct("directors")
