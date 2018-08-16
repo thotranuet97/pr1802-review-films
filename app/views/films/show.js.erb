@@ -1,1 +1,1 @@
-$('#review-content').html(<%= params[:id_review] %>);
+$('#review-content').html('<%= escape_javascript(render "review-detail") %>');

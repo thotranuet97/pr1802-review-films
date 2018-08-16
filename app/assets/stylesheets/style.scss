@@ -149,6 +149,7 @@ ul{
 #review-content.loading{
   .modal-body{
     background: asset_url("loading.svg") center center no-repeat;
+    min-height: 240px;
   }
 }
 

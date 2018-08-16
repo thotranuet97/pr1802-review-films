@@ -36,7 +36,6 @@ $(document).on("turbolinks:load", function() {
         $(this).next().next().toggle("0");
         $(this).next().toggleClass("fa-angle-down fa-angle-right");
     });
-
     // Rating js
     var rate = $('#rate').attr('data-rate');
     $("#rateYo").rateYo({
@@ -78,5 +77,5 @@ $(document).on("turbolinks:load", function() {
             },
             dataType: "script",
         })
-    })
+    });
 });

@@ -47,19 +47,19 @@
               <div class="rate" id="rate" data-rate=<%= @film.average_ratings ? @film.average_ratings : 0 %>>Rating:<span id="rateYo"></span><span id="count-rate">( <%= @film.raters.count %> )</span></div>
               <ul class="share">
                 <li class="facebook">
-                  <a href="http://www.facebook.com/sharer.php?u=<%= request.original_url %>" class="post_share_facebook" onclick="javascript:window.open(this.href,
-                      '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=220,width=600');return false;">
+                  <a href="http://www.facebook.com/sharer.php?u=<%= request.original_url %>" class="post_share_facebook" onclick="window.open(this.href,
+                      '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=260,width=600');return false;">
                     <i class="fab fa-facebook-f"></i>
                   </a>
                 </li>
                 <li class="twitter">
-                  <a href="https://twitter.com/share?url=<%= request.original_url %>" onclick="javascript:window.open(this.href,
+                  <a href="https://twitter.com/share?url=<%= request.original_url %>" onclick="window.open(this.href,
                       '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=260,width=600');return false;" class="product_share_twitter">
                     <i class="fab fa-twitter"></i>
                   </a>
                 </li>
                 <li class="googleplus">
-                  <a href="https://plus.google.com/share?url=<%= request.original_url %>" onclick="javascript:window.open(this.href,
+                  <a href="https://plus.google.com/share?url=<%= request.original_url %>" onclick="window.open(this.href,
                       '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                     <i class="fab fa-google-plus-g"></i>
                   </a>
@@ -69,7 +69,7 @@
               <%= render("films/rate-form") %>
             </div>
             <div class="film-review-right">
-              <span><%= @film.average_ratings if @film%></span>
+              <span><%= @film.average_ratings if @film %></span>
             </div>
           </div>
           <div class="film-story text-content">
