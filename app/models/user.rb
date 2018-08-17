@@ -1,9 +1,9 @@
 class User < ApplicationRecord
-  has_many :films
-  has_many :comments
-  has_many :ratings
-  has_many :rated_films, through: :ratings, source: :film
-  has_many :reviews
+  has_many :films, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :ratings, dependent: :destroy
+  has_many :rated_films, through: :ratings, source: :film, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   attr_accessor :remember_token
   before_save :downcase_email
