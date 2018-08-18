@@ -3,12 +3,13 @@ default: &default
   encoding: utf8
   pool: 5
   host: localhost
-  database: review-films
   username: root
-  password: "123456"
+  password:
+  # socket: /var/run/mysqld/mysqld.sock
+  # socket: /tmp/mysql.sock
 development:
   <<: *default
-
+  database: review_films
 test:
   <<: *default
   database: <%= ENV["DATABASE_NAME_TEST"] %>
@@ -17,4 +18,5 @@ staging:
   <<: *default
 
 production:
-<<: *default
+  <<: *default
+  database: review_films_production
