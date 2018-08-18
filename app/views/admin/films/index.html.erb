@@ -1,11 +1,11 @@
 <table class="table cat-table">
   <thead class="thead-dark">
   <tr>
-    <th scope="col" >#</th>
-    <th scope="col" >Name</th>
-    <th scope="col" >Categories</th>
-    <th scope="col" >Action</th>
-    <th scope="col" >Release date</th>
+    <th scope="col">#</th>
+    <th scope="col"><%= t ".name" %></th>
+    <th scope="col"><%= t ".categories" %></th>
+    <th scope="col"><%= t ".action" %></th>
+    <th scope="col"><%= t ".released_date" %></th>
   </tr>
   </thead>
   <tbody>
@@ -14,20 +14,20 @@
       <td><%= index %></td>
       <td><%= film.name %></td>
       <td>
-        <% film.categories.each do |cat| %>
-          <%= link_to cat.name, admin_category_path(cat) %>
+        <% film.categories.each do |category| %>
+          <%= link_to category.name, admin_category_path(category) %>
         <% end %>
       </td>
       <td>
-        <%= link_to "Edit", edit_admin_film_path(film) %> |
-        <%= link_to "Delete", admin_film_path(film.id), method: :delete,
-              data: { confirm: "Are you sure ?" } %> |
+        <%= link_to t("edit"), edit_admin_film_path(film) %> |
+        <%= link_to t("delete"), admin_film_path(film.id), method: :delete,
+              data: {confirm: t("delete_confirm")} %> |
         <%= if film.review
-              link_to "Review", admin_review_path(film.review)
+              link_to t(".review"), admin_review_path(film.review)
             else
-              link_to "Write review", new_admin_film_review_path(film)
+              link_to t(".write_review"), new_admin_film_review_path(film)
             end %> |
-        <%= link_to "View film", film_path(film.id) %>
+        <%= link_to t(".view_film"), film_path(film.id) %>
       </td>
       <td>
         <%= film.release_date %>

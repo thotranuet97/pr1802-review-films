@@ -9,10 +9,10 @@ class Admin::CategoriesController < AdminController
   def create
     @category = Category.new category_params
     if @category.save
-      flash[:info] = "Category created !"
+      flash[:info] = t ".category_created"
       redirect_to admin_categories_path
     else
-      flash[:alert] = "Category creating error !"
+      flash[:alert] = t ".category_created_error"
       render :index
     end
   end
@@ -22,10 +22,10 @@ class Admin::CategoriesController < AdminController
 
   def update
     if @category.update category_params
-      flash[:alert] = "Category updated !"
+      flash[:alert] = t ".category_updated"
       redirect_to admin_categories_path
     else
-      flash[:alert] = "Category updating error !"
+      flash[:alert] = t ".category_updated_error"
       render :edit
     end
   end

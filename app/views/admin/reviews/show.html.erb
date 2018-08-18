@@ -1,22 +1,22 @@
 <div class="row">
   <div class="col-md-12">
     <div class="block-section">
-      <h3>Film</h3>
+      <h3><%= t ".film" %></h3>
       <%= link_to @review.film.name, admin_film_path(@review.film) %>
     </div>
     <div class="block-section">
-      <h3>Review title</h3>
+      <h3><%= t ".review_title" %></h3>
       <%= @review.title %>
     </div>
     <div class="block-section">
-      <h3>Review content</h3>
+      <h3><%= t ".review_content" %></h3>
       <%= raw(@review.content) %>
     </div>
     <div class="block-section">
       <h3>Action</h3>
-      <%= link_to "Edit", edit_admin_review_path(@review) %>
-      <%= link_to "Delete", admin_review_path(@review), method: :delete,
-            data: { confirm: "Are you sure?" } %>
+      <%= link_to t("edit"), edit_admin_review_path(@review) %>
+      <%= link_to t("delete"), admin_review_path(@review), method: :delete,
+            data: {confirm: t("delete_confirm")} %>
     </div>
   </div>
 </div>

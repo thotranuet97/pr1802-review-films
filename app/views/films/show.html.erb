@@ -12,22 +12,22 @@
             <% end %>
           </div>
           <div class="film-info">
-            <h4>Movie info</h4>
+            <h4><<%= t ".movie_info" %></h4>
             <ul>
               <li>
-                <span>Actor:</span><%= @film.actors %>
+                <span><%= t ".actor" %></span><%= @film.actors %>
               </li>
               <li>
-                <span>Release Date:</span><%= @film.release_date %>
+                <span><%= t ".released_date" %></span><%= @film.release_date %>
               </li>
               <li>
-                <span>Genres:</span>
-                <% @film.categories.each do |cat| %>
-                  <%= link_to cat.name, category_path(cat) %>
+                <span><%= t ".genres" %></span>
+                <% @film.categories.each do |category| %>
+                  <%= link_to category.name, category_path(category) %>
                 <% end %>
               </li>
               <li>
-                <span>Country:</span><%= @film.country %>
+                <span><%= t ".country" %></span><%= @film.country %>
               </li>
             </ul>
           </div>
@@ -37,14 +37,14 @@
             <div class="film-review-left">
               <h1><%= @film.name %></h1>
               <ul class="genres">
-                <% @film.categories.each do |cat| %>
+                <% @film.categories.each do |category| %>
                   <li>
-                  <%= link_to cat.name, category_path(cat) %>
+                  <%= link_to cat.name, category_path(category) %>
                   </li>
                 <% end %>
               </ul>
               <span class="duration"><%= @film.duration %> min</span>
-              <div class="rate" id="rate" data-rate=<%= @film.average_ratings ? @film.average_ratings : 0 %>>Rating:<span id="rateYo"></span><span id="count-rate">( <%= @film.raters.count %> )</span></div>
+              <div class="rate" id="rate" data-rate=<%= @film.average_ratings ? @film.average_ratings : 0 %>><%= t ".rating" %><span id="rateYo"></span><span id="count-rate">( <%= @film.raters.count %> )</span></div>
               <ul class="share">
                 <li class="facebook">
                   <a href="http://www.facebook.com/sharer.php?u=<%= request.original_url %>" class="post_share_facebook" onclick="window.open(this.href,
@@ -74,13 +74,13 @@
           </div>
           <div class="film-story text-content">
             <h3>
-              <i class="fas fa-book-open"></i>Movie story</h3>
+              <i class="fas fa-book-open"></i><%= t ".movie_story" %></h3>
             <%= raw @film.introduction %>
           </div>
           <% if @film.trailer.present? %>
           <div class="film-trailer">
             <h3>
-              <i class="fas fa-video"></i> Movie trailer</h3>
+              <i class="fas fa-video"></i> <%= t ".movie_trailer" %></h3>
             <a href="<%= @film.trailer %>" data-lity class="trailer">
               <% if @film.video_thumbnail.present? %>
                 <%= image_tag @film.video_thumbnail_url, class: "thumb-video" %>
@@ -93,7 +93,7 @@
           <% end %>
           <div class="film-related">
             <h3>
-              <i class="far fa-thumbs-up"></i>Recommend movies</h3>
+              <i class="far fa-thumbs-up"></i><%= t ".recommended_movies" %></h3>
             <div class="row">
               <div class="col-md-4">
                 <div class="rlt-film">
@@ -112,7 +112,7 @@
                         <a href="#">Star war</a>
                       </li>
                       <li>
-                        Rating
+                        <%= t ".rating" %>
                       </li>
                     </ul>
                   </div>
@@ -135,7 +135,7 @@
                         <a href="#">Star war</a>
                       </li>
                       <li>
-                        Rating
+                        <%= t ".rating" %>
                       </li>
                     </ul>
                   </div>
@@ -158,7 +158,7 @@
                         <a href="#">Star war</a>
                       </li>
                       <li>
-                        Rating
+                        <%= t ".rating" %>
                       </li>
                     </ul>
                   </div>

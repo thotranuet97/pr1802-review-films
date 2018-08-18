@@ -1,35 +1,35 @@
-<div class="filter"> 
+<div class="filter">
   <%= form_tag category_path, method: :get, onsubmit: "setDate()" do %>
     <div class="form-group">
       <h5 class="font-weight-bold"><%= label_tag :sort_by %></h5>
       <%= select_tag :sort_params, options_for_select(@sort_prams,
-        selected: params[:sort_params]),  prompt: "-- Select one --",
+        selected: params[:sort_params]),  prompt: t(".select_one"),
         class: "form-control" %>
     </div>
-    <h5 class="font-weight-bold">Filter by</h5>
+    <h5 class="font-weight-bold"><%= t ".filter_by" %></h5>
     <div class="form-group">
       <%= label_tag :release_year %>
       <%= select_tag :year_params, options_for_select(@release_years_list,
-        selected: params[:year_params]), prompt: "-- Select one --",
+        selected: params[:year_params]), prompt: t(".select_one"),
         class: "form-control" %>
     </div>
     <div class="form-group">
       <%= label_tag :director %>
       <%= select_tag :director_params, options_for_select(@directors_list,
-        selected: params[:director_params]), prompt: "-- Select one --",
+        selected: params[:director_params]), prompt: t(".select_one"),
         class: "form-control" %>
-    </div>   
-    <h6 class="font-weight-bold">Interval</h6>  
+    </div>
+    <h6 class="font-weight-bold"><%= t ".interval" %></h6>
     <div class="form-group">
       <%= label_tag :from %>
       <%= date_field_tag :start_date, nil, class: "form-control interval" %>
-    </div>  
+    </div>
     <div class="form-group">
       <%= label_tag :to %>
       <%= date_field_tag :end_date, nil, class: "form-control interval" %>
     </div>
     <div class="form-group">
-      <%= submit_tag "Filter", name: nil, class: "btn btn-primary" %>
+      <%= submit_tag t(".filter"), name: nil, class: "btn btn-primary" %>
     </div>
-  <% end %>  
+  <% end %>
 </div>

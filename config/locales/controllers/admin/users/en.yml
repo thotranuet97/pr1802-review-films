@@ -1,0 +1,10 @@
+en:
+  admin:
+    users:
+      create:
+        user_created: "User created success!"
+        user_created_error: "User creating has errors!"
+      update:
+        user_updated: "User updated success!"
+        user_updated_error: "User updating has errors!"
+

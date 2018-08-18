@@ -1,22 +1,2 @@
-<% provide :btn_title, "Update review" %>
-<%= form_for [:admin, @review] do |f| %>
-  <div class="row">
-    <div class="col-md-8">
-      <div class="block-section">
-        Review for film <%= @review.film.name %>
-      </div>
-      <div class="block-section">
-        <h3>Review title</h3>
-        <%= f.text_field :title, class: "form-control",
-          placeholder: "Enter review title" %>
-      </div>
-      <div class="block-section">
-        <h3>Review content</h3>
-        <%= f.cktext_area :content, class: "form-control" %>
-      </div>
-      <div class="block-section">
-        <%= f.submit "Update review", class: "btn btn-default" %>
-      </div>
-    </div>
-  </div>
-<% end %>
+<% @reviewmodel = [:admin, @review] %>
+<%= render partial: "form", locals: {reviewmodel: @reviewmodel} %>

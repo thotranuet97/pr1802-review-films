@@ -1,0 +1,10 @@
+en:
+  admin:
+    films:
+      create:
+        film_created: "Film created success!"
+        film_created_error: "Film creating has errors!"
+      update:
+        film_updated: "Film updated success!"
+        film_updated_error: "Film updating has errors!"
+

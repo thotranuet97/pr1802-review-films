@@ -15,10 +15,10 @@ class Admin::FilmsController < AdminController
   def create
     @film = current_user.films.new film_params
     if @film.save
-      flash[:info] = "film created !"
+      flash[:info] = t ".film_created"
       redirect_to admin_films_path
     else
-      flash[:alert] = "film creating error !"
+      flash[:alert] = t ".film_created_error"
       render :new
     end
   end
@@ -28,10 +28,10 @@ class Admin::FilmsController < AdminController
 
   def update
     if @film.update film_params
-      flash[:alert] = "Film updated !"
+      flash[:alert] = t ".film_updated"
       redirect_to admin_films_path
     else
-      flash[:alert] = "film creating error !"
+      flash[:alert] = t ".film_updated_error"
       render :edit
     end
   end
