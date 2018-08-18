@@ -34,6 +34,9 @@ en:
       no_review_title: "No review title"
       have_no_review_for_this_movie: "Have no review for this movie"
       close: "Close"
+    related:
+      waiting: "Waiting..."
+      rating: "Rating:"
   ratings:
     create:
       rating_created: "Rating created success!"

@@ -10,7 +10,7 @@
   </div>
   <div class="info">
     <h3 class="title">
-      <%= link_to film.name, film_path film, class: "text-justify" %>
+      <%= link_to film.name, film_path(film), class: "text-justify" %>
     </h3>
     <ul class="meta">
       <li>
@@ -24,8 +24,8 @@
       </li>
     </ul>
     <span class="text-muted"><%= t ".released_date" %>
-      <%= film.release_date.strftime "%d-%m-%Y" %>
-    <span>
+      <%= film.release_date %>
+    </span>
     <div class="desc text-justify">
       <%= raw film.introduction.truncate 500 %>
     </div>

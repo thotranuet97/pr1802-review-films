@@ -39,7 +39,7 @@
               <ul class="genres">
                 <% @film.categories.each do |category| %>
                   <li>
-                  <%= link_to cat.name, category_path(category) %>
+                  <%= link_to category.name, category_path(category) %>
                   </li>
                 <% end %>
               </ul>
@@ -65,8 +65,8 @@
                   </a>
                 </li>
               </ul>
-              <%= render("films/review") %>
-              <%= render("films/rate-form") %>
+              <%= render "review" %>
+              <%= render "rate-form" %>
             </div>
             <div class="film-review-right">
               <span><%= @film.average_ratings if @film %></span>
@@ -91,81 +91,7 @@
             </a>
           </div>
           <% end %>
-          <div class="film-related">
-            <h3>
-              <i class="far fa-thumbs-up"></i><%= t ".recommended_movies" %></h3>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="rlt-film">
-                  <div class="thumb">
-                    <a href="#">
-                      <%= image_tag "review-item.jpg" %>
-                    </a>
-                  </div>
-                  <div class="info">
-                    <h3>
-                      <a href="#">Star Wars Ut enim ad minim veniam, quis nostrud exercit</a>
-                    </h3>
-                    <ul class="meta">
-                      <li>
-                        <i class="fas fa-archive"></i>
-                        <a href="#">Star war</a>
-                      </li>
-                      <li>
-                        <%= t ".rating" %>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="rlt-film">
-                  <div class="thumb">
-                    <a href="#">
-                      <%= image_tag "review-item.jpg" %>
-                    </a>
-                  </div>
-                  <div class="info">
-                    <h3>
-                      <a href="#">Star Wars Ut enim ad minim veniam, quis nostrud exercit</a>
-                    </h3>
-                    <ul class="meta">
-                      <li>
-                        <i class="fas fa-archive"></i>
-                        <a href="#">Star war</a>
-                      </li>
-                      <li>
-                        <%= t ".rating" %>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="rlt-film">
-                  <div class="thumb">
-                    <a href="#">
-                      <%= image_tag "review-item.jpg" %>
-                    </a>
-                  </div>
-                  <div class="info">
-                    <h3>
-                      <a href="#">Star Wars Ut enim ad minim veniam, quis nostrud exercit</a>
-                    </h3>
-                    <ul class="meta">
-                      <li>
-                        <i class="fas fa-archive"></i>
-                        <a href="#">Star war</a>
-                      </li>
-                      <li>
-                        <%= t ".rating" %>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render "related" %>
         </div>
       </div>
     </div>
