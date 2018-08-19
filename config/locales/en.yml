@@ -1,4 +1,8 @@
 en:
+  options:
+    - "name"
+    - "actors"
+    - "directors"
   edit: "Edit"
   delete: "Delete"
   delete_confirm: "Are you sure?"

@@ -2,7 +2,8 @@ class Admin::CategoriesController < AdminController
   before_action :find_category, only: [:edit, :update, :destroy]
 
   def index
-    @categories = Category.paginate page: params[:page], per_page: 10
+    @categories = Category.order_asc.paginate page: params[:page],
+      per_page: Settings.admin.categories.per_page
     @category = Category.new
   end
 

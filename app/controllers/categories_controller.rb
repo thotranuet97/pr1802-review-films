@@ -2,13 +2,12 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find_by id: params[:id]
     @films = @category.films
-      .paginate page: params[:page], per_page: 10    
 
     if params[:search_params].present?
       @films = @films.search_in_cat params[:search_params]
     end
 
-    @sort_prams = Category::SORT_PARAMS
+    @sort_prams = I18n.translate(:options)
     if params[:sort_params].present?
       @films = @films.sort_films params[:sort_params]
     end
@@ -27,6 +26,9 @@ class CategoriesController < ApplicationController
       @films = @films.filter_by_interval params[:start_date],
         params[:end_date]
     end
+
+    @films = @films.paginate page: params[:page],
+      per_page: Settings.films.per_page
   end
 
   def index

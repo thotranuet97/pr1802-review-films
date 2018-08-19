@@ -1,12 +1,18 @@
 <% if user_signed_in? %>
   <% if @film.raters.find_by(id: current_user.id).blank? %>
-    <a href="#" class="btn-rate" data-toggle="modal" data-target="#rate-wrapper"><%= t ".rate_this_movie" %></a>
-    <div class="modal fade" id="rate-wrapper" tabindex="-1" role="dialog" aria-labelledby="rate-wrapperCenterTitle" aria-hidden="true">
+    <a href="#" class="btn-rate" data-toggle="modal"
+      data-target="#rate-wrapper">
+      <%= t ".rate_this_movie" %>
+    </a>
+    <div class="modal fade" id="rate-wrapper" tabindex="-1" role="dialog"
+      aria-labelledby="rate-wrapperCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle"><%= t ".rate_this_movie" %></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              <%= t ".rate_this_movie" %></h5>
+            <button type="button" class="close" data-dismiss="modal"
+              aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -20,7 +26,8 @@
               </div>
             </div>
             <div class="modal-footer">
-              <%= f.submit t(".submit"), class: "btn btn-submit", id: "btn-rate" %>
+              <%= f.submit t ".submit", class: "btn btn-submit",
+                id: "btn-rate" %>
             </div>
           <% end %>
         </div>

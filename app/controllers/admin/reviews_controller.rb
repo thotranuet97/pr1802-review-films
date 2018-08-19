@@ -4,7 +4,8 @@ class Admin::ReviewsController < AdminController
     :destroy]
 
   def index
-    @reviews = Review.paginate page: params[:page], per_page: 20
+    @reviews = Review.paginate page: params[:page],
+      per_page: Settings.admin.reviews.per_page
   end
 
   def show

@@ -12,20 +12,20 @@ class FilmsController < ApplicationController
       format.js
     end
 
-    @film_relateds = Film.related_films(@film).order_films
+    @film_relateds = Film.related_films(@film).order_created_desc
   end
 
   def index
     @films = Film.all
     if params[:search_content].present?
-      if %w(name actors directors).include? params[:search_option]
+      if I18n.translate(:options).include? params[:search_option]
         @films = @films.search_with_option params[:search_option], params[:search_content]
       else
         @films = @films.search_all params[:search_content]
       end
     end
-    @films = @films.order_films.paginate page: params[:page],
-      per_page: 10
+    @films = @films.order_released_desc.paginate page: params[:page],
+      per_page: Settings.films.per_page
   end
 
   private

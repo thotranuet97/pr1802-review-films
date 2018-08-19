@@ -45,7 +45,7 @@
                   </li>
                 <% end %>
               </ul>
-              <span class="duration"><%= @film.duration %> min</span>
+              <span class="duration"><%= @film.duration %><%= t ".min" %></span>
                 <div class="rate" id="rate" data-rate=<%= @film.average_ratings ? @film.average_ratings : 0 %>>
                 <%= t ".rating" %><span id="rateYo">
               </span>
@@ -67,7 +67,7 @@
           <% if @film.trailer.present? %>
           <div class="film-trailer">
             <h3>
-              <i class="fas fa-video"></i> <%= t ".movie_trailer" %></h3>
+              <i class="fas fa-video"></i><%= t ".movie_trailer" %></h3>
             <a href="<%= @film.trailer %>" data-lity class="trailer">
               <% if @film.video_thumbnail.present? %>
                 <%= image_tag @film.video_thumbnail_url, class: "thumb-video" %>
