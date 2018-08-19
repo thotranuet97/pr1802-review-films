@@ -15,6 +15,19 @@ class FilmsController < ApplicationController
     @film_relateds = Film.related_films(@film).order_films
   end
 
+  def index
+    @films = Film.all
+    if params[:search_content].present?
+      if %w(name actors directors).include? params[:search_option]
+        @films = @films.search_with_option params[:search_option], params[:search_content]
+      else
+        @films = @films.search_all params[:search_content]
+      end
+    end
+    @films = @films.order_films.paginate page: params[:page],
+      per_page: 10
+  end
+
   private
 
   def find_film

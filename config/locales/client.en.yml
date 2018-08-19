@@ -1,13 +1,25 @@
 en:
+  pages:
+    film:
+      none: "None"
+      actors: "Actors:"
+      unknown: "Unknown"
+    home:
+      none: "None"
+      actors: "Actors:"
+      unknown: "Unknown"
+      spotlight_this_month: "Spotlight This Month"
+      see_all_movies: "See All Movies"
+      recently_release: "Recently Release"
+      top_rated: "Top Rated"
+      coming_soon: "Coming Soon"
+      trailers_this_month: "Trailers This Month"
+      reviews_this_month: "Reviews This Month"
   shared:
     error_messages:
       the_form_contains: "The form contains"
       error: "error"
   categories:
-    film:
-      rating: "Rating:"
-      released_date: "Released date:"
-      view_more: "View more"
     filter:
       select_one: "-- Select one --"
       filter_by: "Filter by"
@@ -30,6 +42,13 @@ en:
       put_comment_placeholder: "Reply box..."
       Submit: "Submit"
   films:
+    film:
+      rating: "Rating: "
+      released_date: "Released date:"
+      none: "None"
+      unknown: "Unknown"
+      view_more: "View more"
+      date: "%d-%m-%Y"
     show:
       movie_info: "Movie info"
       actor: "Actor:"

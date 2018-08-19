@@ -1,0 +1,36 @@
+<div class="col-md">
+  <div class="archive-film-item">
+    <div class="thumb">
+      <% if film.thumbnail.present? %>
+        <%= link_to film_path(film) do %>
+          <%= image_tag film.thumbnail_url %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="info">
+      <h3 class="title">
+        <%= link_to film.name, film_path(film), class: "text-justify" %>
+      </h3>
+      <ul class="meta">
+        <li>
+          <i class="fas fa-archive"></i>
+          <% film.categories.each do |category| %>
+            <%= link_to category.name, category_path(category) %>
+          <% end %>
+        </li>
+        <li>
+          <%= t ".rating" %><%= film.average_ratings.present? ? film.average_ratings : t ".none" %>
+        </li>
+      </ul>
+      <span class="text-muted"><%= t ".released_date" %>
+        <%= film.release_date.present? ? l film.release_date, format: :default : t ".unknown" %>
+      <span>
+      <div class="desc text-justify">
+        <%= film.introduction.present? ? (raw film.introduction.truncate 500) : t ".rating" %>
+      </div>
+      <a href="<%= film_path(film) %>" class="readmore"><%= t ".view_more" %>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</div>

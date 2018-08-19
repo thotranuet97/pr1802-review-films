@@ -10,7 +10,7 @@
               <% end %>
             </div>
             <h1 class="logo">
-              <%= link_to "#" do %>
+              <%= link_to root_path do %>
                 <%= image_tag "logo.png" %>
               <% end %>
             </h1>
@@ -18,18 +18,17 @@
         </div>
         <div class="col-md-6 align-self-center">
           <div class="header-center">
-            <form action="/">
-              <select name="" id="" class="custom-select">
-                <option selected>Choose...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-              <input type="text" class="form-control input-field">
-              <button type="submit" class="btn-submit">
+            <%= form_tag films_path, method: :get do %>
+              <%= select_tag :search_option,
+                options_for_select(%w(name actors directors),
+                selected: params[:search_option]), prompt: "Choose...",
+                class: "custom-select" %>
+              <%= text_field_tag :search_content, params[:search_content],
+                class: "form-control input-field" %>
+              <%= button_tag(type: "submit", class: "btn-submit") do %>
                 <i class="fas fa-search"></i>
-              </button>
-            </form>
+              <% end %>
+            <% end %>
           </div>
         </div>
         <div class="col-md-3 align-self-center">
