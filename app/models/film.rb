@@ -13,12 +13,35 @@ class Film < ApplicationRecord
   mount_uploader :video_thumbnail, ThumbnailUploader
 
   scope :order_films, -> {order created_at: :desc}
+  
   scope :related_films, -> (film) do
     joins(:film_categories).where("category_id IN (?)", film.category_ids)
       .where.not(id: film.id).distinct.limit 3
   end
-  
-  scope :sort_films, ->(sort_params){ order("#{sort_params} desc") }
+
+  scope :recently_released, -> {where("release_date < ?", Time.now).limit 4}
+
+  scope :top_rated, -> {order(average_ratings: :desc).limit 4}
+
+  scope :coming_soon, -> {where("release_date > ?", Time.now).limit 4}
+
+  scope :this_month, -> {where("month(release_date) like ?", Time.now.month).limit 5}
+
+  scope :search_with_option, ->(search_option, search_content) do
+    where "#{search_option} like ?","%#{search_content}%"
+  end
+
+  scope :search_all, -> (search_content) do
+    where("name like ?","%#{search_content}%")
+      .or(where "actors like ?","%#{search_content}%")
+      .or where "directors like ?","%#{search_content}%"
+  end
+
+  scope :search_in_cat, ->(search_params) do
+    where "name like ?", "%#{search_params}%"
+  end
+
+  scope :sort_films, ->(sort_params){ order("#{sort_params}") }
 
   scope :release_years_list, -> do
     select("year(release_date) as release_date")

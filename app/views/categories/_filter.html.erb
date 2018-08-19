@@ -1,5 +1,6 @@
-<div class="filter">
-  <%= form_tag category_path, method: :get, onsubmit: "setDate()" do %>
+
+<div class="filter"> 
+  <%= form_tag category_path, method: :get do %>
     <div class="form-group">
       <h5 class="font-weight-bold"><%= label_tag :sort_by %></h5>
       <%= select_tag :sort_params, options_for_select(@sort_prams,

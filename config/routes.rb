@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get "signup", to: "users#new"
   post "signup", to: "users#create"
 
-  resources :films, only: [:show]
+  resources :films, only: [:show, :index]
   resources :reviews, only: [:show] do
     resources :comments, only: [:create]
   end

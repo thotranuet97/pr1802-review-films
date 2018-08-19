@@ -7,4 +7,6 @@ class Review < ApplicationRecord
 
   mount_uploader :banner, ThumbnailUploader
   mount_uploader :thumbnail, ThumbnailUploader
+
+  scope :find_by_film_ids, ->(films) { where film_id: films }
 end
