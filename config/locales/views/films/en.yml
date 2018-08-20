@@ -1,0 +1,22 @@
+en:
+  films:
+    show:
+      movie_info: "Movie info"
+      actor: "Actor:"
+      released_date: "Released Date:"
+      genres: "Genres:"
+      country: "Country:"
+      rating: "Rating:"
+      movie_story: "Movie story"
+      movie_trailer: "Movie trailer"
+      recommended_movies: "Recommended movies"
+    review:
+      review_title: "Review title"
+      close: "Close"
+    rate-form:
+      rate_this_movie: "Rate this movie"
+      submit: "Submit"
+    review-detail:
+      no_review_title: "No review title"
+      have_no_review_for_this_movie: "Have no review for this movie"
+      close: "Close"

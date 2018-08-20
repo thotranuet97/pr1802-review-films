@@ -1,0 +1,10 @@
+en:
+  admin:
+    reviews:
+      create:
+        review_created: "Review created success!"
+        review_created_error: "Review creating has errors!"
+      update:
+        review_updated: "Review updated success!"
+        review_updated_error: "Review updating has errors!"
+

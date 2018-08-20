@@ -2,21 +2,21 @@
   <div class="row">
     <div class="col-md-12">
       <div class="block-section">
-        <h3>Name</h3>
+        <h3><%= t ".user_name" %></h3>
         <%= f.text_field :name, class: "form-control",
-          placeholder: "Enter user name"%>
+          placeholder: t(".user_name_placeholder") %>
       </div>
       <div class="block-section">
-        <h3>Email</h3>
+        <h3><%= t ".email" %></h3>
         <%= f.email_field :email, class: "form-control",
-          placeholder: "Enter email" %>
+          placeholder: t(".email_placeholder") %>
       </div>
       <div class="block-section">
-        <h3>Password</h3>
+        <h3><%= t ".password" %></h3>
         <%= f.password_field :password, class: "form-control",
-          placeholder: "Enter password" %>
+          placeholder: t(".password_placeholder") %>
       </div>
-      <%= f.submit yield(:btn_title), class: "btn btn-default" %>
+      <%= f.submit t(".btn_title_#{params[:action]}"), class: "btn btn-default" %>
     </div>
   </div>
 <% end %>

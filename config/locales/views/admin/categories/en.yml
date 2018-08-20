@@ -1,0 +1,14 @@
+en:
+  admin:
+    categories:
+      index:
+        title: "All categories"
+        btn_title: "Create category"
+        name: "Name"
+        count: "Count"
+      edit:
+        title: "Update category"
+      form:
+        btn_title_edit: "Update category"
+        title_placeholder: "Enter category title"
+      category:

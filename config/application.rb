@@ -31,5 +31,6 @@ module Pr1802ReviewFilms
     config.generators.system_tests = nil
 
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
   end
 end

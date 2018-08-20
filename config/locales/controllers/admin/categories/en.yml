@@ -1,0 +1,9 @@
+en:
+  admin:
+    categories:
+      create:
+        category_created: "Category created !"
+        category_created_error: "Category creating error !"
+      update:
+        category_updated: "Category updated !"
+        category_updated_error: "Category updated error !"

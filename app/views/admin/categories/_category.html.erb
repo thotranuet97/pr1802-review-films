@@ -5,12 +5,12 @@
   <td>
     <ul class="cat-action">
       <li>
-        <%= link_to "Edit", edit_admin_category_path(category.id) %>
-      </li>      
-      <li>
-        <%= link_to "Delete", admin_category_path(category.id), method: :delete, data:{confirm: "Are you sure?"} %>
+        <%= link_to t("edit"), edit_admin_category_path(category) %>
       </li>
-    </ul>    
+      <li>
+        <%= link_to t("delete"), admin_category_path(category), method: :delete, data:{confirm: t("delete_confirm")} %>
+      </li>
+    </ul>
     <span>
       Only admin to action
     </span>

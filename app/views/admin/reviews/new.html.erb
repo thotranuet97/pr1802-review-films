@@ -1,21 +1,2 @@
-<% provide :btn_title, "Create review" %>
-<%= form_for [:admin, @film, @review] do |f| %>
-  <div class="row">
-    <div class="col-md-8">
-      <div class="block-section">
-        Review for film <%= link_to @film.name, admin_film_path(@film) %>
-      </div>
-      <div class="block-section">
-        <h3>Review title</h3>
-        <%= f.text_field :title, class: "form-control", placeholder: "Enter review title" %>
-      </div>
-      <div class="block-section">
-        <h3>Review content</h3>
-        <%= f.cktext_area :content, class: "form-control" %>
-      </div>
-      <div class="block-section">
-        <%= f.submit yield(:btn_title), class: "btn btn-default" %>
-      </div>
-    </div>
-  </div>
-<% end %>
+<% @reviewmodel = [:admin, @film, @review] %>
+<%= render partial: "form", locals: {reviewmodel: @reviewmodel} %>

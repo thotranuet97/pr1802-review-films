@@ -1,13 +1,13 @@
 class RatingsController < ApplicationController
   before_action :logged_in_user, only: :create
-  
+
   def create
     @rate = Rating.new rate_params
     if @rate.save
-      flash[:info] = "rate created !"
+      flash[:info] = t ".rating_created"
       redirect_to film_path @rate.film_id
     else
-      flash[:alert] = "rate creating error !"
+      flash[:alert] = t ".rating_created_error"
       render "films/show"
     end
   end

@@ -20,16 +20,16 @@
         <% end %>
       </li>
       <li>
-        Rating: <%= film.average_ratings if film %>
+        <%= t ".rating" %> <%= film.average_ratings if film %>
       </li>
     </ul>
-    <span class="text-muted">Release date:
+    <span class="text-muted"><%= t ".released_date" %>
       <%= film.release_date.strftime "%d-%m-%Y" %>
     <span>
     <div class="desc text-justify">
       <%= raw film.introduction.truncate 500 %>
     </div>
-    <a href="<%= film_path film %>" class="readmore">View more
+    <a href="<%= film_path film %>" class="readmore"><%= t ".view_more" %>
       <i class="fas fa-arrow-right"></i>
     </a>
   </div>

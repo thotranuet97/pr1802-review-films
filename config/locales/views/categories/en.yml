@@ -1,0 +1,11 @@
+en:
+  categories:
+    film:
+      rating: "Rating:"
+      released_date: "Released date:"
+      view_more: "View more"
+    filter:
+      select_one: "-- Select one --"
+      filter_by: "Filter by"
+      interval: "Interval"
+      filter: "Filter"

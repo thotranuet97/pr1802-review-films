@@ -1,0 +1,9 @@
+en:
+  sessions:
+    new:
+      your_email_address: "Your email address"
+      password: "Password"
+      remember_me: "Remember me"
+      login_btn_title: "Log me in!"
+      signup_btn_title: "sign up now!"
+      new_user?: "New user?"
