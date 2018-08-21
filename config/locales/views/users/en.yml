@@ -1,9 +1,0 @@
-en:
-  users:
-    form:
-      btn_title_new: "Sign up!"
-      btn_title_edit: "Update profile"
-      your_name: "Your name"
-      your_email: "Your email address"
-      password: "Your password"
-      password_confirmation: "Re-type your password"

@@ -1,0 +1,62 @@
+en:
+  shared:
+    error_messages:
+      the_form_contains: "The form contains"
+      error: "error"
+  categories:
+    film:
+      rating: "Rating:"
+      released_date: "Released date:"
+      view_more: "View more"
+    filter:
+      select_one: "-- Select one --"
+      filter_by: "Filter by"
+      interval: "Interval"
+      filter: "Filter"
+  films:
+    show:
+      movie_info: "Movie info"
+      actor: "Actor:"
+      released_date: "Released Date:"
+      genres: "Genres:"
+      country: "Country:"
+      rating: "Rating:"
+      movie_story: "Movie story"
+      movie_trailer: "Movie trailer"
+      recommended_movies: "Recommended movies"
+    review:
+      review_title: "Review title"
+      close: "Close"
+    rate-form:
+      rate_this_movie: "Rate this movie"
+      submit: "Submit"
+    review-detail:
+      no_review_title: "No review title"
+      have_no_review_for_this_movie: "Have no review for this movie"
+      close: "Close"
+  ratings:
+    create:
+      rating_created: "Rating created success!"
+      rating_created_error: "Rating creating has errors!"
+  users:
+    create:
+      signup_success: "Sign up success, please sign in!"
+    form:
+      btn_title_new: "Sign up!"
+      btn_title_edit: "Update profile"
+      your_name: "Your name"
+      your_email: "Your email address"
+      password: "Your password"
+      password_confirmation: "Re-type your password"
+  sessions:
+    new:
+      your_email_address: "Your email address"
+      password: "Password"
+      remember_me: "Remember me"
+      login_btn_title: "Log me in!"
+      signup_btn_title: "sign up now!"
+      new_user: "New user?"
+    create:
+      invalid_email_password: "Invalid email/password combination!"
+    destroy:
+      logout_success: "Logout success!"
