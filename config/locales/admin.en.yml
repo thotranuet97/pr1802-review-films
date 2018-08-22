@@ -1,0 +1,109 @@
+en:
+  admin:
+    unauthorized: "Unauthorized!"
+    categories:
+      index:
+        title: "All categories"
+        btn_title: "Create category"
+        name: "Name"
+        count: "Count"
+      create:
+        category_created: "Category created !"
+        category_created_error: "Category creating error !"
+      edit:
+        title: "Update category"
+      update:
+        category_updated: "Category updated !"
+        category_updated_error: "Category updated error !"
+      form:
+        btn_title_edit: "Update category"
+        title_placeholder: "Enter category title"
+    films:
+      index:
+        name: "Name"
+        categories: "Categories"
+        action: "Action"
+        released_date: "Released date"
+        review: "Review"
+        write_review: "Write review"
+        view_film: "View film"
+      show:
+        name: "Name"
+        write_review: "Write review"
+      create:
+        film_created: "Film created success!"
+        film_created_error: "Film creating has errors!"
+      update:
+        film_updated: "Film updated success!"
+        film_updated_error: "Film updating has errors!"
+      form:
+        btn_title_new: "Add movie"
+        btn_title_edit: "Edit movie"
+        movie_name: "Movie name"
+        movie_name_placeholder: "Enter film title"
+        movie_introduction: "Movie introduction"
+        movie_trailer: "Movie trailer"
+        movie_trailer_placeholder: "Enter video url"
+        movie_trailer_thumbnail: "Movie trailer thumbnail"
+        movie_actors: "Movie actors"
+        movie_actors_placeholder: "Enter actors"
+        movie_directors: "Movie directors"
+        movie_directors_placeholder: "Enter directors"
+        movie_categories: "Movie categories"
+        duration: "Duration"
+        duration_placeholder: "Minutes"
+        country: "Country"
+        country_placeholder: "Enter movies country"
+        released_date: "Released date"
+        movie_thumbnail: "Movie thumbnail"
+        movie_poster: "Movie poster"
+    reviews:
+      index:
+        title: "Title"
+        film: "Film"
+        action: "Action"
+        created_date: "Created date"
+      show:
+        film: "Film"
+        review_title: "Review title"
+        review_content: "Review content"
+      create:
+        review_created: "Review created success!"
+        review_created_error: "Review creating has errors!"
+      update:
+        review_updated: "Review updated success!"
+        review_updated_error: "Review updating has errors!"
+      form:
+        btn_title_new: "Create review"
+        btn_title_edit: "Update review"
+        review_for_film: "Review for film "
+        review_title: "Review title"
+        review_title_placeholder: "Enter review title"
+        review_content: "Review content"
+    users:
+      index:
+        name: "Name"
+        email: "Email"
+        action: "Action"
+        join_date: "Join date"
+        admin: "[Admin]"
+        profile: "Profile"
+      show:
+        name: "Name"
+        email: "Email"
+        join_date: "Join date"
+      create:
+        user_created: "User created success!"
+        user_created_error: "User creating has errors!"
+      update:
+        user_updated: "User updated success!"
+        user_updated_error: "User updating has errors!"
+      form:
+        btn_title_new: "Create user"
+        btn_title_edit: "Update user"
+        user_name: "Name"
+        user_name_placeholder: "Enter name"
+        email: "Email"
+        email_placeholder: "Enter email"
+        password: "Password"
+        password_placeholder: "Enter password"

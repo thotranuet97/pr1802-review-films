@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pr1802ReviewFilms</title>
+    <title><%= t ".title" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -25,7 +25,7 @@
     <%= yield %>
     <footer>
       <div class="footer-btm">
-        <p>© 2018 Your Company. All Rights Reserved.</p>
+        <p><%= t ".copyright" %></p>
       </div>
     </footer>
   </body>

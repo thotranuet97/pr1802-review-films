@@ -1,6 +1,0 @@
-en:
-  ratings:
-    create:
-      rating_created: "Rating created success!"
-      rating_created_error: "Rating creating has errors!"
-
