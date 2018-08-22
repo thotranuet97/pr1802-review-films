@@ -1,0 +1,30 @@
+<div class="film-related">
+  <h3><i class="far fa-thumbs-up"></i>Recommend movies</h3>
+  <div class="row">
+    <% @film_relateds.each do |f| %>
+    <div class="col-md-4">
+      <div class="rlt-film">
+        <div class="thumb">
+          <%= image_tag f.thumbnail.present? ? f.thumbnail_url : "400x650.png" %>
+        </div>
+        <div class="info">
+          <h3>
+            <%= link_to f.name, film_path(f) %>
+          </h3>
+          <ul class="meta">
+            <li>
+              <i class="fas fa-archive"></i>
+              <% f.categories.each do |cat| %>
+                <%= link_to cat.name, category_path(cat) %>
+              <% end %>
+            </li>
+            <li>
+              <%= t ".rating" %> <%= f.average_ratings ? f.average_ratings : t(".waiting") %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

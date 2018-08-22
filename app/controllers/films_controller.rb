@@ -11,6 +11,8 @@ class FilmsController < ApplicationController
       format.html
       format.js
     end
+
+    @film_relateds = Film.related_films(@film).order_films
   end
 
   private

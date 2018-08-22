@@ -6,7 +6,7 @@
     </button>
   </div>
   <div class="modal-body" >
-    <%= @review.present? ? @review.content : t(".have_no_review_for_this_movie") %>
+    <%= @review.present? ? raw(@review.content) : t(".have_no_review_for_this_movie") %>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t ".close" %></button>
