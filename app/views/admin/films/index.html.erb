@@ -9,7 +9,7 @@
   </tr>
   </thead>
   <tbody>
-  <% @films.each.with_index(1) do |film, index| %>
+  <% @films.each.with_index(@films.offset + 1) do |film, index| %>
     <tr>
       <td><%= index %></td>
       <td><%= film.name %></td>
@@ -22,12 +22,12 @@
         <%= link_to t("edit"), edit_admin_film_path(film) %> |
         <%= link_to t("delete"), admin_film_path(film.id), method: :delete,
               data: {confirm: t("delete_confirm")} %> |
+        <%= link_to t(".view_film"), film_path(film.id) %> |
         <%= if film.review
-              link_to t(".review"), admin_review_path(film.review)
+              link_to t(".review"), review_path(film.review)
             else
               link_to t(".write_review"), new_admin_film_review_path(film)
-            end %> |
-        <%= link_to t(".view_film"), film_path(film.id) %>
+            end %>
       </td>
       <td>
         <%= film.release_date %>

@@ -1,8 +1,8 @@
-<%= form_for reviewmodel do |f| %>
+<%= form_for [:admin, @film, @review], url: admin_film_review_path(@film) do |f| %>
   <div class="row">
     <div class="col-md-8">
       <div class="block-section">
-        <%= t ".review_for_film" %><%= link_to @review.film.name, admin_film_path(@review.film) %>
+        <%= t ".review_for_film" %><%= link_to @review.film.name, film_path(@review.film) %>
       </div>
       <div class="block-section">
         <h3><%= t ".review_title" %></h3>
@@ -10,17 +10,17 @@
       </div>
       <div class="block-section">
         <h3><%= t ".review_title_placeholder" %></h3>
-        <%= f.cktext_area :content, class: "form-control" %>
+        <%= f.cktext_area :content, class: "form-control", height: "300px" %>
       </div>
       <div class="block-section">
         <h3>Banner</h3>
-        <%= f.file_field :banner, class: "form-control" %>
+        <%= f.file_field :banner %>
         <%= f.hidden_field :banner_cache %>
         <%= image_tag @review.banner_url, class: "preview" if @review.banner? %>
       </div>
       <div class="block-section">
         <h3>Thumbnail</h3>
-        <%= f.file_field :thumbnail, class: "form-control" %>
+        <%= f.file_field :thumbnail %>
         <%= f.hidden_field :thumbnail_cache %>
         <%= image_tag @review.thumbnail_url, class: "preview" if @review.thumbnail? %>
       </div>

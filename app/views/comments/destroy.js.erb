@@ -1,0 +1,6 @@
+<% if @comment.errors.any? %>
+  $('#<%= @comment.commentable_type %>-<%= @comment.commentable_id %>-errors').html('<%= escape_javascript(render "shared/error_messages", object: @comment) %>');
+<% else %>
+  $('#<%= @comment.commentable_type %>-<%= @comment.commentable_id %>-errors').empty();
+  $('#<%= @comment.commentable_type %>-<%= @comment.id %>-comments').remove();
+<% end %>

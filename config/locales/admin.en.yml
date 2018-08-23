@@ -4,7 +4,6 @@ en:
     categories:
       index:
         title: "All categories"
-        btn_title: "Create category"
         name: "Name"
         count: "Count"
       create:
@@ -16,6 +15,7 @@ en:
         category_updated: "Category updated !"
         category_updated_error: "Category updated error !"
       form:
+        btn_title_index: "Create category"
         btn_title_edit: "Update category"
         title_placeholder: "Enter category title"
     films:
@@ -42,6 +42,7 @@ en:
         movie_name: "Movie name"
         movie_name_placeholder: "Enter film title"
         movie_introduction: "Movie introduction"
+        movie_introduction_placeholder: "Enter movie introduction"
         movie_trailer: "Movie trailer"
         movie_trailer_placeholder: "Enter video url"
         movie_trailer_thumbnail: "Movie trailer thumbnail"
@@ -63,10 +64,13 @@ en:
         film: "Film"
         action: "Action"
         created_date: "Created date"
+        view: "View"
       show:
         film: "Film"
         review_title: "Review title"
         review_content: "Review content"
+      new:
+        review_exist: "Review already exist for this film!"
       create:
         review_created: "Review created success!"
         review_created_error: "Review creating has errors!"

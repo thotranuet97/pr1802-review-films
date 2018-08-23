@@ -1,7 +1,7 @@
 CKEDITOR.editorConfig = function (config){
     config.language = 'en'
     config.width = '100%'
-    config.height = '850'
+    config.height = '300'
     // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
     config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
 

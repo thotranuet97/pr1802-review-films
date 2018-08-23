@@ -18,7 +18,17 @@
     <div class="container">
       <% flash.each do |message_type, message| %>
         <div class="col-md-12">
-          <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+          <%= content_tag :div, class: "alert alert-#{message_type}" do %>
+            <% if message.is_a? Array %>
+              <%= content_tag :ul do %>
+                <% message.each do |m| %>
+                  <%= content_tag :li, m %>
+                <% end %>
+              <% end %>
+            <% else %>
+              <%= message %>
+            <% end %>
+          <% end %>
         </div>
       <% end %>
     </div>
