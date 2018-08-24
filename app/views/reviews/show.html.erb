@@ -1,0 +1,66 @@
+<div class="review-wrapper">
+  <style>
+    .review-info {
+      <% if @review.banner.present? %>
+        background-image: url(<%= asset_path @review.banner_url %>);
+      <% else %>
+        background-image: url(<%= asset_path "review.jpg" %>);
+      <% end %>
+    }
+  </style>
+  <div class="review-info">
+    <div class="container">
+      <div class="review-date">
+        <span class="day"><%= l @review.created_at, format: :dd %></span>
+        <span class="month"><%= l @review.created_at, format: :mmm_yyyy %></span>
+      </div>
+      <div class="review-meta">
+        <h2 class="title"><%= @review.title %></h2>
+        <ul class="meta">
+          <li><i class="fas fa-user-circle"></i><%= @review.user.name %></li>
+          <li>
+            <i class="fas fa-film"></i>
+            <%= link_to @review.film.name, @review.film %>
+          </li>
+          <% if @review.comments.exists? %>
+            <li>
+              <i class="fas fa-comments"></i>
+              <%= pluralize @review.comments.count, t(".comment") %>
+            </li>
+          <% end %>
+          <li class="hashtag"><i class="fas fa-tags"></i><a href="#">#tag1</a><a href="#">#tag1</a><a href="#">#tag1</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="review-content">
+    <div class="container">
+      <div class="review-content-entry text-content">
+        <%= raw @review.content %>
+      </div>
+      <div class="review-share">
+        <span><%= t ".share" %></span>
+        <%= render partial: "shared/social_share" %>
+      </div>
+      <div class="comments-wrapper">
+        <% if @review.comments.exists? %>
+          <h3 class="heading">
+            <%= pluralize @review.comments.count, t(".thought") %> <%= t ".on" %>
+            "<%= @review.title %>"
+          </h3>
+        <% end %>
+        <div class="comments-list">
+          <ul id="Review-<%= @review.id%>-comments">
+            <% if @review.comments.exists? %>
+              <%= render partial: 'comments/comment', collection: @review.comments %>
+            <% end %>
+          </ul>
+        </div>
+        <%= if user_signed_in?
+              render partial: "comments/comment_form",
+                locals: {comment: @review.comments.build(user_id: current_user.id)}
+            end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 class Admin::ReviewsController < AdminController
   before_action :find_review, only: [:show, :edit, :update, :destroy]
-  before_action :find_film, only: [:new, :create]
+  before_action :find_film, only: [:show, :new, :create, :edit, :update,
+    :destroy]
 
   def index
     @reviews = Review.paginate page: params[:page], per_page: 20
@@ -10,14 +11,19 @@ class Admin::ReviewsController < AdminController
   end
 
   def new
-    @review = @film.build_review
+    if @film.review.present?
+      flash[:danger] = t ".review_exist"
+      redirect_to admin_reviews_path
+    else
+      @review = @film.build_review
+    end
   end
 
   def create
     @review = @film.build_review review_params.merge(user_id: current_user.id)
     if @review.save
       flash[:info] = t ".review_created"
-      redirect_to admin_review_path @review
+      redirect_to admin_reviews_path
     else
       flash[:danger] = t ".review_created_error"
       render :new
@@ -30,7 +36,7 @@ class Admin::ReviewsController < AdminController
   def update
     if @review.update review_params
       flash[:info] = t ".review_updated"
-      redirect_to admin_review_path @review
+      redirect_to edit_admin_film_review_path @review.film
     else
       flash[:danger] = t ".review_updated_error"
       render :edit
@@ -39,17 +45,19 @@ class Admin::ReviewsController < AdminController
 
   def destroy
     @review.destroy
-    redirect_to admin_film_path @review.film
+    redirect_to admin_reviews_path
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:title, :content)
+    params.require(:review)
+      .permit :title, :content, :banner, :thumbnail,
+        :banner_cache, :thumbnail_cache
   end
 
   def find_review
-    @review = Review.find_by id: params[:id]
+    @review = find_film.review
   end
 
   def find_film

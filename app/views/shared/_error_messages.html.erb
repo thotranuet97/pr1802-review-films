@@ -1,12 +1,17 @@
 <% if object.errors.any? %>
-  <div id="error_explanation">
-    <div class="alert alert-danger">
+  <div class="alert alert-dismissible fade show" role="alert" id="card border-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="card-header bg-danger text-white">
       <%= t ".the_form_contains" %> <%= pluralize(object.errors.count, t(".error")) %>.
     </div>
-    <ul>
-    <% object.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
+    <ul class="mb-0 list-group list-group-flush">
+      <% object.errors.full_messages.each do |msg| %>
+        <li class="list-group-item">
+          <%= msg %>
+        </li>
+      <% end %>
     </ul>
   </div>
 <% end %>

@@ -13,6 +13,22 @@ en:
       filter_by: "Filter by"
       interval: "Interval"
       filter: "Filter"
+  comments:
+    create:
+      comment_create: "Your comment was posted !"
+    update:
+      comment_update: "Your comment is updated !"
+    destroy:
+      comment_destroy: "Your comment is deleted !"
+    comment:
+      Edit: "Edit"
+      Reply: "Reply"
+    comment_form:
+      put_comment_placeholder: "Put comment here"
+      Submit: "Submit"
+    reply_form:
+      put_comment_placeholder: "Reply box..."
+      Submit: "Submit"
   films:
     show:
       movie_info: "Movie info"
@@ -41,12 +57,20 @@ en:
     create:
       rating_created: "Rating created success!"
       rating_created_error: "Rating creating has errors!"
+  reviews:
+    show:
+      comment: "comment"
+      share: "Share"
+      thought: "thought"
+      on: "on"
   users:
     create:
       signup_success: "Sign up success, please sign in!"
     form:
       btn_title_new: "Sign up!"
+      btn_title_create: "Sign up!"
       btn_title_edit: "Update profile"
+      btn_title_update: "Update profile"
       your_name: "Your name"
       your_email: "Your email address"
       password: "Your password"

@@ -8,8 +8,14 @@ en:
       title: "PR1802 Review Films"
     admin:
       title: "PR1802 Review Films Admin"
+  time:
+    formats:
+      dd: "%d"
+      mmm_yyyy: "%b %y"
   activerecord:
     attributes:
+      comment:
+        content: "Comment content"
       user:
         name: "The user name"
         email: "The email"
