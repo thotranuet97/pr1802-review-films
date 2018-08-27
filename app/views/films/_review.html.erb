@@ -1,19 +1,26 @@
-<a class="btn-quickview" data-toggle="modal" data-target="#reviewfilm" data-review-id="<%= @film.review.id if @film.review.present? %>">
-  View review
+<a class="btn-quickview" data-toggle="modal" data-target="#reviewfilm"
+  data-review-id="<%= @film.review.id if @film.review.present? %>">
+  <%= t(".view_review") %>
 </a>
-<div class="modal fade" id="reviewfilm" tabindex="-1" role="dialog" aria-labelledby="reviewfilmTitle" aria-hidden="true">
+<div class="modal fade" id="reviewfilm" tabindex="-1" role="dialog"
+  aria-labelledby="reviewfilmTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content" id="review-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"><%= t ".review_title" %></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          <%= t ".review_title" %>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal"
+          aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t ".close" %></button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
       </div>
     </div>
   </div>

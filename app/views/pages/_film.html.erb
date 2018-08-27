@@ -1,0 +1,26 @@
+<div class="col-md-3">
+  <div class="item film-item">
+    <div class="thumb">
+    <%= image_tag film.thumbnail.present? ? film.thumbnail_url : "1.jpg" %>
+    </div>
+    <div class="info">
+      <div class="rating">
+        <i class="fas fa-star"></i>
+        <%= film.average_ratings.present? ? film.average_ratings : t(".none") %>
+      </div>
+      <h3>
+        <%= link_to film.name, film_path(film) %></a>
+      </h3>
+      <ul class="genre">              
+        <% film.categories.each do |category| %>
+          <li><%= link_to category.name, category_path(category) %></li>
+        <% end %>
+        </li>
+      </ul>
+      <div class="actors">
+        <span><%= t(".actors") %></span>
+        <%= film.actors.present? ? film.actors : t(".unknown") %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -155,5 +155,19 @@ ul{
 
 //Category link show
 .cat-show-link {
-  color: white;
+  color: white;  
 } 
+
+#search-in-cat {
+  position: relative;
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 38px;
+    width: 45px;
+    background: none;
+    border: none;
+    border-left: 1px solid #ebebeb;
+  }
+}

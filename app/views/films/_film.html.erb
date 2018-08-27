@@ -1,12 +1,11 @@
+<div class="col-md">
 <div class="archive-film-item">
   <div class="thumb">
-    <a href="#">
     <% if film.thumbnail.present? %>
-      <a href="<%= film_path film %>">
+      <%= link_to film_path(film) do %>
         <%= image_tag film.thumbnail_url %>
-      </a>
+      <% end %>
     <% end %>
-    </a>
   </div>
   <div class="info">
     <h3 class="title">
@@ -20,17 +19,18 @@
         <% end %>
       </li>
       <li>
-        <%= t ".rating" %> <%= film.average_ratings if film %>
+        <%= t(".rating") %><%= film.average_ratings.present? ? film.average_ratings : t(".none") %>
       </li>
     </ul>
-    <span class="text-muted"><%= t ".released_date" %>
-      <%= film.release_date %>
-    </span>
+    <span class="text-muted"><%= t(".released_date") %>
+      <%= film.release_date.present? ? l(film.release_date, format: :default) : t(".unknown") %>
+    <span>
     <div class="desc text-justify">
-      <%= raw film.introduction.truncate 500 %>
+      <%= film.introduction.present? ? (raw film.introduction.truncate 500) : t(".rating") %>
     </div>
-    <a href="<%= film_path film %>" class="readmore"><%= t ".view_more" %>
+    <a href="<%= film_path(film) %>" class="readmore"><%= t(".view_more") %>
       <i class="fas fa-arrow-right"></i>
     </a>
   </div>
+</div>
 </div>

@@ -1,5 +1,7 @@
 <div class="film-main">
-  <div class="film-banner" style="background-image: url(<%=  @film.poster_url %>)"></div>
+  <div class="film-banner"
+    style="background-image: url(<%=  @film.poster_url %>)">
+  </div>
   <div class="film-wrapper">
     <div class="container">
       <div class="row">
@@ -44,7 +46,11 @@
                 <% end %>
               </ul>
               <span class="duration"><%= @film.duration %> min</span>
-              <div class="rate" id="rate" data-rate=<%= @film.average_ratings ? @film.average_ratings : 0 %>><%= t ".rating" %><span id="rateYo"></span><span id="count-rate">( <%= @film.raters.count %> )</span></div>
+                <div class="rate" id="rate" data-rate=<%= @film.average_ratings ? @film.average_ratings : 0 %>>
+                <%= t ".rating" %><span id="rateYo">
+              </span>
+              <span id="count-rate">( <%= @film.raters.count %> )</span>
+              </div>
               <%= render "shared/social_share" %>
               <%= render "review" %>
               <%= render "rate-form" %>
@@ -53,7 +59,7 @@
               <span><%= @film.average_ratings if @film %></span>
             </div>
           </div>
-          <div class="film-story text-content">
+          <div class="film-story text-content text-justify">
             <h3>
               <i class="fas fa-book-open"></i><%= t ".movie_story" %></h3>
             <%= raw @film.introduction %>

@@ -10,7 +10,8 @@
         <%= render "filter" %>
       </div>
       <div class="col-md-9">
-        <%= render partial: "film", collection: @films %>
+        <%= render "search" %>
+        <%= render partial: "films/film", collection: @films %>
         <%= will_paginate @films %>
       </div>
     </div>
