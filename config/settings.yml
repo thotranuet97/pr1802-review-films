@@ -12,4 +12,4 @@ films:
   spotlight_limit: 4
   related_limit: 3
   trailer_limit: 5
-
+email_from: "awesome.academy.test@gmail.com"

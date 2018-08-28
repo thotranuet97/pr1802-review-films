@@ -15,7 +15,7 @@ class Film < ApplicationRecord
   scope :order_created_desc, -> {order created_at: :desc}
 
   scope :order_released_desc, -> {order release_date: :desc}
-  
+
   scope :related_films, -> (film) do
     joins(:film_categories).where("category_id IN (?)", film.category_ids)
       .where.not(id: film.id).distinct.limit Settings.films.related_limit
@@ -32,9 +32,9 @@ class Film < ApplicationRecord
     order(average_ratings: :desc).limit Settings.films.spotlight_limit
   end
 
-  scope :coming_soon, -> do 
+  scope :coming_soon, -> do
     where("release_date > ?", Time.now).order(release_date: :asc)
-    .limit Settings.films.spotlight_limit
+      .limit Settings.films.spotlight_limit
   end
 
   scope :search_with_option, ->(search_option, search_content) do
@@ -59,6 +59,7 @@ class Film < ApplicationRecord
       .distinct("release_date")
       .order "release_date asc"
   end
+
   scope :filter_by_year, ->(year_params) do
     where "year(release_date) like ?", "#{year_params}"
   end
@@ -74,6 +75,6 @@ class Film < ApplicationRecord
 
   scope :filter_by_interval, ->(start_date, end_date) do
     where("release_date between ? and ?", "#{start_date}", "#{end_date}")
-    .distinct "release_date"
+      .distinct "release_date"
   end
 end

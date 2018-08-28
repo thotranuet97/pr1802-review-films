@@ -1,0 +1,18 @@
+<div class="container-fluid py-3">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <%= form_with url: password_resets_path do |f| %>
+        <fieldset>
+          <div class="form-group">
+            <%= f.email_field :email,
+              id: :email,
+              class: "form-control input-lg",
+              placeholder: 'name@domain.com' %>
+          </div>
+          <%= f.submit t(".reset_password"),
+            class: "btn btn-lg btn-primary btn-block" %>
+        </fieldset>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -13,7 +13,7 @@
           <h3>
             <%= link_to film.name, film_path(film) %></a>
           </h3>
-          <ul class="genre">              
+          <ul class="genre">
             <% film.categories.each do |category| %>
               <li><%= link_to category.name, category_path(category) %></li>
             <% end %>
@@ -71,7 +71,7 @@
           </div>
           <div class="tab-pane fade" id="nav-3" role="tabpanel"
             aria-labelledby="nav-3-tab">
-            <div class="row">            
+            <div class="row">
               <%= render partial: "film",
                 collection: @this_month_films.coming_soon,
                 as: :film %>
@@ -83,7 +83,7 @@
   </div>
   <div class="film-trailers">
     <div class="container">
-      <h3 class="film-heading"><%= t ".trailer_this_month" %>
+      <h3 class="film-heading"><%= t ".trailers_this_month" %>
         <a href="#"><%= t ".see_all_movies" %>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -101,14 +101,14 @@
               <% end %>
               <%= image_tag "play.png", class: "play" %>
               <div class="info-trailer">
-                <div class="film-thumb">             
+                <div class="film-thumb">
                   <%= link_to film_path @this_month_films.first do %>
                     <% if @this_month_films.first.thumbnail_url %>
                       <% image_tag @this_month_films.first.thumbnail_url %>
                     <% else %>
                       <img src="http://via.placeholder.com/100x100" alt="">
                     <% end %>
-                  <% end %>           
+                  <% end %>
                 </div>
                 <div class="film-info">
                   <h3 class="title">
@@ -131,7 +131,7 @@
               </div>
             </a>
           <% end %>
-        </div>        
+        </div>
         <div class="row">
           <%= render partial: "trailer", collection: @this_month_films[1..-1],
             as: :film %>
@@ -141,9 +141,9 @@
   </div>
   <div class="film-reviews">
     <div class="container">
-      <h3 class="film-heading"><%= t ".reviews_this_month" %> 
+      <h3 class="film-heading"><%= t ".reviews_this_month" %>
         <a href="#">
-          <%= t ".see_all_review" %><i class="fas fa-arrow-right"></i>
+          <%= t ".see_all_reviews" %><i class="fas fa-arrow-right"></i>
         </a>
       </h3>
       <div class="row">

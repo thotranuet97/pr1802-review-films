@@ -28,6 +28,10 @@
       <li class="list-group-item">
         <%= t ".new_user" %> <%= link_to t(".signup_btn_title"), signup_path %>
       </li>
+      <li class="list-group-item">
+        <%= t ".forgot_password" %> <%= link_to t(".reset_password"),
+          new_password_reset_path %>
+      </li>
     </ul>
   <% end %>
 </div>

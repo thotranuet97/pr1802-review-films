@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :rated_films, through: :ratings, source: :film, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :reset_token
   before_save :downcase_email
 
   validates :name, presence: true, length: {minimum: 3}
@@ -22,29 +22,49 @@ class User < ApplicationRecord
     self.email = email.downcase
   end
 
-  # Returns the hash digest of the given string.
-  def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-      BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
+  class << self
+    def digest string
+      cost =
+        if ActiveModel::SecurePassword.min_cost
+          BCrypt::Engine::MIN_COST
+        else
+          BCrypt::Engine.cost
+        end
+      BCrypt::Password.create string, cost: cost
+    end
 
-  def User.new_token
-    SecureRandom.urlsafe_base64
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
   end
 
   def remember
     self.remember_token = User.new_token
-    update_attribute(:remember_digest, User.digest(remember_token))
+    update remember_digest: User.digest(remember_token)
   end
 
-  def authenticated?(attribute, token)
-    digest = send("#{attribute}_digest")
+  def authenticated? attribute, token
+    digest = send "#{attribute}_digest"
     return false if digest.nil?
-    BCrypt::Password.new(digest).is_password?(token)
+    BCrypt::Password.new(digest).is_password? token
   end
 
   def forget
-    update_attribute(:remember_digest, nil)
+    update remember_digest: nil
+  end
+
+  def set_password_reset_digest
+    self.reset_token = User.new_token
+    update reset_digest: User.digest(reset_token)
+    update reset_sent_at: Time.zone.now
+  end
+
+  def send_password_reset
+    self.set_password_reset_digest
+    UserMailer.password_reset(self).deliver
+  end
+
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
   end
 end
