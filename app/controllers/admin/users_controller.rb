@@ -2,7 +2,8 @@ class Admin::UsersController < AdminController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.paginate page: params[:page], per_page: 20
+    @users = User.paginate page: params[:page],
+      per_page: Settings.admin.users.per_page
   end
 
   def show

@@ -1,0 +1,15 @@
+admin:
+  categories:
+    per_page: 10
+  films:
+    per_page: 20
+  reviews:
+    per_page: 20
+  users:
+    perpage: 20
+films:
+  per_page: 10
+  spotlight_limit: 4
+  related_limit: 3
+  trailer_limit: 5
+

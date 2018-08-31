@@ -20,7 +20,7 @@
             </li>
           </ul>
           <div class="actors">
-            <span><%= t(".actors") %></span>
+            <span><%= t ".actors" %></span>
             <%= film.actors.present? ? film.actors : t(".unknown") %>
           </div>
         </div>
@@ -30,8 +30,8 @@
   </div>
   <div class="film-tabs">
     <div class="container">
-      <h3 class="film-heading"><%= t(".spotlight_this_month") %>
-        <a href="#"><%= t(".see_all_movies") %>
+      <h3 class="film-heading"><%= t ".spotlight_this_month" %>
+        <a href="#"><%= t ".see_all_movies" %>
           <i class="fas fa-arrow-right"></i>
         </a>
       </h3>
@@ -40,15 +40,15 @@
           <div class="nav" id="nav-tab" role="tablist">
             <a class="nav-item  active" id="nav-home-tab" data-toggle="tab"
               href="#nav-1" role="tab" aria-controls="nav-1"
-              aria-selected="true"><%= t(".recently_release") %>
+              aria-selected="true"><%= t ".recently_release" %>
             </a>
-            <a class="nav-item " id="nav-profile-tab" data-toggle="tab"
+            <a class="nav-item " id="nav-prt ofile-tab" data-toggle="tab"
               href="#nav-2" role="tab" aria-controls="nav-2"
-              aria-selected="false"><%= t(".top_rated") %>
+              aria-selected="false"><%= t ".top_rated" %>
             </a>
             <a class="nav-item " id="nav-contact-tab" data-toggle="tab"
               href="#nav-3" role="tab" aria-controls="nav-3"
-              aria-selected="false"><%= t(".coming_soon") %>
+              aria-selected="false"><%= t ".coming_soon" %>
             </a>
           </div>
         </nav>
@@ -83,8 +83,8 @@
   </div>
   <div class="film-trailers">
     <div class="container">
-      <h3 class="film-heading"><%= t(".trailer_this_month") %>
-        <a href="#"><%= t(".see_all_movies") %>
+      <h3 class="film-heading"><%= t ".trailer_this_month" %>
+        <a href="#"><%= t ".see_all_movies" %>
           <i class="fas fa-arrow-right"></i>
         </a>
       </h3>
@@ -99,7 +99,7 @@
               <% else %>
                 <%= image_tag "400x650.png" %>
               <% end %>
-              <%= image_tag("play.png", class: "play") %>
+              <%= image_tag "play.png", class: "play" %>
               <div class="info-trailer">
                 <div class="film-thumb">             
                   <%= link_to film_path @this_month_films.first do %>
@@ -125,8 +125,7 @@
                 </div>
                 <div class="mark">
                   <span>
-                  <%= @this_month_films.first.average_ratings
-                    if @this_month_films.first.average_ratings %>
+                  <%= @this_month_films.first.average_ratings if @this_month_films.first.average_ratings %>
                   </span>
                 </div>
               </div>
@@ -142,9 +141,9 @@
   </div>
   <div class="film-reviews">
     <div class="container">
-      <h3 class="film-heading"><%= t(".reviews_this_month") %> 
+      <h3 class="film-heading"><%= t ".reviews_this_month" %> 
         <a href="#">
-          <%= t(".see_all_review") %><i class="fas fa-arrow-right"></i>
+          <%= t ".see_all_review" %><i class="fas fa-arrow-right"></i>
         </a>
       </h3>
       <div class="row">

@@ -12,20 +12,30 @@ class Film < ApplicationRecord
   mount_uploader :poster, ThumbnailUploader
   mount_uploader :video_thumbnail, ThumbnailUploader
 
-  scope :order_films, -> {order created_at: :desc}
+  scope :order_created_desc, -> {order created_at: :desc}
+
+  scope :order_released_desc, -> {order release_date: :desc}
   
   scope :related_films, -> (film) do
     joins(:film_categories).where("category_id IN (?)", film.category_ids)
-      .where.not(id: film.id).distinct.limit 3
+      .where.not(id: film.id).distinct.limit Settings.films.related_limit
   end
 
-  scope :recently_released, -> {where("release_date < ?", Time.now).limit 4}
+  scope :this_month, -> do
+    where("month(release_date) like ?", Time.now.month)
+  end
 
-  scope :top_rated, -> {order(average_ratings: :desc).limit 4}
+  scope :recently_released, -> do
+    where("release_date < ?", Time.now).limit Settings.films.spotlight_limit
+  end
+  scope :top_rated, -> do
+    order(average_ratings: :desc).limit Settings.films.spotlight_limit
+  end
 
-  scope :coming_soon, -> {where("release_date > ?", Time.now).limit 4}
-
-  scope :this_month, -> {where("month(release_date) like ?", Time.now.month).limit 5}
+  scope :coming_soon, -> do 
+    where("release_date > ?", Time.now).order(release_date: :asc)
+    .limit Settings.films.spotlight_limit
+  end
 
   scope :search_with_option, ->(search_option, search_content) do
     where "#{search_option} like ?","%#{search_content}%"
@@ -41,7 +51,7 @@ class Film < ApplicationRecord
     where "name like ?", "%#{search_params}%"
   end
 
-  scope :sort_films, ->(sort_params){ order("#{sort_params}") }
+  scope :sort_films, ->(sort_params){order("#{sort_params}")}
 
   scope :release_years_list, -> do
     select("year(release_date) as release_date")

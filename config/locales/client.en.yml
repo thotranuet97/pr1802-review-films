@@ -59,6 +59,7 @@ en:
       movie_story: "Movie story"
       movie_trailer: "Movie trailer"
       recommended_movies: "Recommended movies"
+      min: " minutes"
     review:
       review_title: "Review title"
       close: "Close"
