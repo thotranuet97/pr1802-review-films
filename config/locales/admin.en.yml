@@ -22,11 +22,15 @@ en:
       index:
         name: "Name"
         categories: "Categories"
+        status: "Status"
         action: "Action"
         released_date: "Released date"
         review: "Review"
         write_review: "Write review"
         view_film: "View film"
+        statuses:
+          publish: "Publish"
+          pending: "Pending"
       show:
         name: "Name"
         write_review: "Write review"
@@ -52,6 +56,7 @@ en:
         movie_directors_placeholder: "Enter directors"
         movie_categories: "Movie categories"
         duration: "Duration"
+        status: "Status"
         duration_placeholder: "Minutes"
         country: "Country"
         country_placeholder: "Enter movies country"

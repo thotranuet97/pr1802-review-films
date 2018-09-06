@@ -1,6 +1,6 @@
 class Film < ApplicationRecord
   include Filter
-  
+
   belongs_to :user
   has_one :review, dependent: :destroy
   has_many :ratings, dependent: :destroy
@@ -8,11 +8,15 @@ class Film < ApplicationRecord
   has_many :film_categories, dependent: :destroy
   has_many :categories, through: :film_categories, dependent: :destroy
 
+  enum status: {publish: 1, pending: 0}
+
   validates :name, presence: true
 
   mount_uploader :thumbnail, ThumbnailUploader
   mount_uploader :poster, ThumbnailUploader
   mount_uploader :video_thumbnail, ThumbnailUploader
+
+  scope :publish, -> {where status: :publish}
 
   scope :order_created_desc, -> {order created_at: :desc}
 
