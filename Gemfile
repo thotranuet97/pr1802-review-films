@@ -11,7 +11,6 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'mysql2'
 gem 'jquery-ui-rails'
-# Use sqlite3 as the database for Active Record
 
 
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'

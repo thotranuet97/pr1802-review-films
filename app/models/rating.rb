@@ -2,6 +2,8 @@ class Rating < ApplicationRecord
   belongs_to :user
   belongs_to :film
 
+  validates_presence_of :rate
+
   after_save :update_average_ratings
 
   private
