@@ -12,6 +12,13 @@ en:
       title: "PR1802 Review Films"
     admin:
       title: "PR1802 Review Films Admin"
+      header:
+        logout: "Logout"
+    client:
+      header:
+        admin_panel: "Admin Panel"
+        logout: "Logout"
+        login: "Login"
   time:
     formats:
       dd: "%d"

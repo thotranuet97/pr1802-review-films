@@ -15,6 +15,7 @@ en:
       coming_soon: "Coming Soon"
       trailers_this_month: "Trailers This Month"
       reviews_this_month: "Reviews This Month"
+      see_all_reviews: "See All Reviews"
   shared:
     error_messages:
       the_form_contains: "The form contains"
@@ -73,6 +74,20 @@ en:
     related:
       waiting: "Waiting..."
       rating: "Rating:"
+  password_resets:
+    new:
+      reset_password: "Reset Password"
+    create:
+      email_sent_if_valid: "Email sent with password reset instructions if your email address is valid"
+    edit:
+      password: "Password"
+      passconf: "Password Confirmation"
+      update_pass: "Update my password"
+    update:
+      cant_be_empty: "can't be empty"
+      password_has_been_reset: "Password has been reset!"
+    check_expiration:
+      password_reset_expired: "Password reset has expired."
   ratings:
     create:
       rating_created: "Rating created success!"
@@ -103,7 +118,15 @@ en:
       login_btn_title: "Log me in!"
       signup_btn_title: "sign up now!"
       new_user: "New user?"
+      forgot_password: "Forgot your password?"
+      reset_password: "Reset password"
     create:
       invalid_email_password: "Invalid email/password combination!"
     destroy:
       logout_success: "Logout success!"
+  user_mailer:
+    password_reset:
+      subject: "Password Reset"
+      headline: "To reset your password, click the link below"
+      reset_password: "Reset Password"
+      reset_password_warning: "If you did not request your password to be reset, just ignore this email and your password will continue to stay the same."

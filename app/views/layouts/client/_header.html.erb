@@ -38,13 +38,13 @@
                 <i class="far fa-user"></i>
                 Welcome <%= link_to current_user.name, current_user %>
               </span>
-              <%= link_to "Admin Panel", admin_path if current_user.admin? %>
-              <%= link_to "Logout", logout_path, method: :delete  %>
+              <%= link_to t(".admin_panel"), admin_path if current_user.admin? %>
+              <%= link_to t(".logout"), logout_path, method: :delete  %>
             <% else %>
               <span>
                 Welcome Guest
               </span>
-              <%= link_to "Login", login_path %>
+              <%= link_to t(".login"), login_path %>
             <% end %>
           </div>
         </div>
