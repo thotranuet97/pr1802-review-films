@@ -1,4 +1,6 @@
 class Film < ApplicationRecord
+  include Filter
+  
   belongs_to :user
   has_one :review, dependent: :destroy
   has_many :ratings, dependent: :destroy
