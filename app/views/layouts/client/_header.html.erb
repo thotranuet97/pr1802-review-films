@@ -24,8 +24,8 @@
                 selected: params[:search_option]), prompt: "Choose...",
                 class: "custom-select" %>
               <%= text_field_tag :search_content, params[:search_content],
-                class: "form-control input-field" %>
-              <%= button_tag(type: "submit", class: "btn-submit") do %>
+                class: "form-control input-field", id: "search-field" %>
+              <%= button_tag type: "submit", class: "btn-submit", name: nil do %>
                 <i class="fas fa-search"></i>
               <% end %>
             <% end %>
