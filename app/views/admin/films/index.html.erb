@@ -4,6 +4,7 @@
     <th scope="col">#</th>
     <th scope="col"><%= t ".name" %></th>
     <th scope="col"><%= t ".categories" %></th>
+    <th scope="col"><%= t ".status" %></th>
     <th scope="col"><%= t ".action" %></th>
     <th scope="col"><%= t ".released_date" %></th>
   </tr>
@@ -17,6 +18,9 @@
         <% film.categories.each do |category| %>
           <%= link_to category.name, admin_category_path(category) %>
         <% end %>
+      </td>
+      <td>
+        <%= t ".statuses.#{film.status}" %>
       </td>
       <td>
         <%= link_to t("edit"), edit_admin_film_path(film) %> |

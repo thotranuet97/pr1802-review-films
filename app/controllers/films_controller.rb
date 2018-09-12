@@ -16,7 +16,7 @@ class FilmsController < ApplicationController
   end
 
   def index
-    @films = Film.all
+    @films = Film.publish
     if params[:search_content].present?
       if I18n.translate(:options).include? params[:search_option]
         @films = @films.search_with_option params[:search_option], params[:search_content]

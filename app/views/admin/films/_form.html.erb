@@ -48,6 +48,10 @@
         <%= f.number_field :duration, class: "form-control", min: 0, placeholder: t(".duration_placeholder") %>
       </div>
       <div class="block-section">
+        <h3><%= t ".status"  %></h3>
+        <%= f.select :status, options_for_select(Film.statuses.keys), {}, {class: "form-control"} %>
+      </div>
+      <div class="block-section">
         <h3><%= t ".country" %></h3>
         <%= f.text_field :country, class: "form-control",
           placeholder: t(".country_placeholder") %>

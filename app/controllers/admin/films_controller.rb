@@ -48,7 +48,7 @@ class Admin::FilmsController < AdminController
     params.require(:film).permit(:name, :introduction, :poster,
       :poster_cache, :thumbnail, :thumbnail_cache, :trailer, :video_thumbnail,
       :video_thumbnail_cache, :actors, :directors, :country, :release_date,
-      :duration, category_ids: [])
+      :duration, :status, category_ids: [])
   end
 
   def find_film
