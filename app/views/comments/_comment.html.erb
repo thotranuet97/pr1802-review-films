@@ -1,4 +1,4 @@
-<li class="comment" id="<%= comment.commentable_type %>-<%= comment.id %>-comments">
+<li class="comment" id="<%= comment.commentable_type %>-<%= comment.id %>-comments-li">
   <div class="comment-wrap">
     <div class="avatar">
       <%= image_tag "avatar.png" %>
@@ -9,11 +9,9 @@
     </div>
     <div class="meta">
       <% if user_signed_in? %>
-        <% if comment.commentable_type == "Review" %>
-          <a class="reply" type="button" data-toggle="collapse" href="#Comment-<%= comment.id %>-form" role="button" aria-expanded="false" aria-controls="Comment-<%= comment.id %>-form">
-            <%= t ".Reply" %>
-          </a>
-        <% end %>
+        <a class="reply" type="button" data-toggle="collapse" href="#Comment-<%= comment.id %>-form" role="button" aria-expanded="false" aria-controls="Comment-<%= comment.id %>-form">
+          <%= t ".Reply" %>
+        </a>
         <% if current_user.admin? %>
           <%= link_to t("delete"), comment_path(comment), method: :delete,
             remote: true, data: {confirm: t("delete_confirm")} %>
@@ -21,16 +19,14 @@
       <% end %>
     </div>
   </div>
-  <% if comment.commentable.is_a? Review %>
-    <% if comment.commentable.content.present? %>
-      <ul class="children" id="Comment-<%= comment.id %>-comments">
-        <% if comment.comments.exists? %>
-          <%= render partial: "comments/comment", collection: comment.comments %>
-        <% end %>
-      </ul>
-    <% end %>
-    <% if user_signed_in? %>
-      <%= render partial: 'comments/reply_form', locals: {comment: Comment.new(user_id: current_user.id, commentable: comment)} %>
-    <% end %>
+  <% if comment.commentable.content.present? %>
+    <ul class="children" id="Comment-<%= comment.id %>-comments-ul">
+      <% if comment.comments.exists? %>
+        <%= render partial: "comments/comment", collection: comment.comments %>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= render partial: 'comments/reply_form', locals: {comment: Comment.new(user_id: current_user.id, commentable: comment)} %>
   <% end %>
 </li>

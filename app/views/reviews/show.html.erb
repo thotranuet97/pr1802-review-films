@@ -50,7 +50,7 @@
           </h3>
         <% end %>
         <div class="comments-list">
-          <ul id="Review-<%= @review.id%>-comments">
+          <ul id="Review-<%= @review.id%>-comments-ul">
             <% if @review.comments.exists? %>
               <%= render partial: 'comments/comment', collection: @review.comments %>
             <% end %>
