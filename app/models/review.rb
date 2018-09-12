@@ -5,6 +5,8 @@ class Review < ApplicationRecord
   has_many :taggings, dependent: :destroy
   has_many :hashtag, through: :taggings, dependent: :destroy
 
+  validates_presence_of :title
+
   mount_uploader :banner, ThumbnailUploader
   mount_uploader :thumbnail, ThumbnailUploader
 

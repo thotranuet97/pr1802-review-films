@@ -1,22 +1,36 @@
 class User < ApplicationRecord
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+
+  attr_accessor :remember_token, :reset_token
+
   has_many :films, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :rated_films, through: :ratings, source: :film, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
-  attr_accessor :remember_token, :reset_token
-  before_save :downcase_email
+  validates_presence_of :email
+  validates_length_of :email,
+    maximum: Settings.user.email.length.maximum,
+    allow_blank: true
+  validates_format_of :email, with: VALID_EMAIL_REGEX, message: :email_format,
+    allow_blank: true
+  validates_uniqueness_of :email, case_sensitive: false,
+    allow_blank: true
 
-  validates :name, presence: true, length: {minimum: 3}
+  validates_presence_of :name
+  validates_length_of :name,
+    minimum: Settings.user.name.length.minimum,
+    allow_blank: true
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates :email, presence: true, length: {maximum: 50},
-    format: {with: VALID_EMAIL_REGEX, message: :email_format},
-    uniqueness: {case_sensitive: false}
+  validates_length_of :password,
+    minimum: Settings.user.password.length.minimum,
+    allow_nil: true
 
-  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
   has_secure_password
+
+  before_save :downcase_email
 
   def downcase_email
     self.email = email.downcase

@@ -13,3 +13,17 @@ films:
   related_limit: 3
   trailer_limit: 5
 email_from: "awesome.academy.test@gmail.com"
+user:
+  name:
+    length:
+      minimum: 3
+  email:
+    length:
+      maximum: 50
+  password:
+    length:
+      minimum: 6
+comment:
+  content:
+    length:
+      minimum: 10
