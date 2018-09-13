@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     resources :categories, except: [:show, :new]
     resources :reviews, only: [:index]
+    resources :comments, only: [:index, :destroy]
   end
   root "pages#home"
 

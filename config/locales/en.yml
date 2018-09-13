@@ -14,6 +14,13 @@ en:
       title: "PR1802 Review Films Admin"
       header:
         logout: "Logout"
+      sidebar:
+        films: "Films"
+        create_a_movie: "Create a movie"
+        categories_movies: "Categories movies"
+        reviews: "Reviews"
+        users: "Users"
+        comments: "Comments"
     client:
       header:
         admin_panel: "Admin Panel"

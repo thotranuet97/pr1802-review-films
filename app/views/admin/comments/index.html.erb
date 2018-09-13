@@ -1,0 +1,31 @@
+<table class="table cat-table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= t ".user" %></th>
+      <th scope="col"><%= t ".content" %></th>
+      <th scope="col"><%= t ".film" %></th>
+      <th scope="col"><%= t ".review" %></th>
+      <th scope="col"><%= t ".action" %></th>
+      <th scope="col"><%= t ".created_date" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <% review = Review.find_by_comment(comment).first %>
+        <td><%= comment.id %></td>
+        <td><%= link_to comment.user_name, admin_user_path(comment.user) %></td>
+        <td><%= comment.content %></td>
+        <td><%= link_to review.film.name, film_path(review.film) %></td>
+        <td><%= link_to review.title, review_path(review) %></td>
+        <td>
+          <%= link_to t("delete"), admin_comment_path(comment), method: :delete,
+                data: {confirm: t("delete_confirm")} %>
+        </td>
+        <td><%= comment.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @comments %>

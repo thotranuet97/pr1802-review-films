@@ -18,6 +18,14 @@ en:
         btn_title_index: "Create category"
         btn_title_edit: "Update category"
         title_placeholder: "Enter category title"
+    comments:
+      index:
+        user: "User"
+        content: "Content"
+        film: "Film"
+        review: "Review"
+        action: "Action"
+        created_date: "Created date"
     films:
       index:
         name: "Name"

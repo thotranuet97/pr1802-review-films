@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
   before_action :find_review, only: :show
 
   def show
-    @comments = @review.comments
   end
 
   private
