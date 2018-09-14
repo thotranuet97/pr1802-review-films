@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+  include Nested
   belongs_to :user
   belongs_to :film
   has_many :comments, as: :commentable, dependent: :destroy
@@ -10,5 +11,6 @@ class Review < ApplicationRecord
   mount_uploader :banner, ThumbnailUploader
   mount_uploader :thumbnail, ThumbnailUploader
 
-  scope :find_by_film_ids, ->(films) { where film_id: films }
+  scope :find_by_film_ids, ->(films) {where film_id: films}
+  scope :find_by_comment, ->(comment) {where id: comment.review_id}
 end

@@ -97,7 +97,7 @@ en:
       comment: "comment"
       share: "Share"
       thought: "thought"
-      on: "on"
+      "on": "on"
   users:
     create:
       signup_success: "Sign up success, please sign in!"
