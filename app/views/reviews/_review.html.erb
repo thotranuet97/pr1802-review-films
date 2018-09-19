@@ -1,0 +1,25 @@
+<div class="col-md-12">
+  <div class="archive-review-item">
+    <div class="thumb">
+      <% if review.thumbnail.present? %>
+        <%= link_to review_path(review) do %>
+          <%= image_tag review.thumbnail_url %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="info">
+      <h3 class="title">
+        <%= link_to review.title, film_review_path(review.film), class: "text-justify" %>
+      </h3>
+      <ul class="meta">
+        <li>
+          <i class="fas fa-archive"></i>
+          <%= link_to review.film_name, film_path(review.film), class: "text-justify" %>
+        </li>
+      </ul>
+      <span class="text-muted"><%= t ".written_at" %>
+        <%= l(review.created_at, format: :dd_mmm_yyyy) %>
+      <span>
+    </div>
+  </div>
+</div>

@@ -22,10 +22,14 @@ Rails.application.routes.draw do
   get "signup", to: "users#new"
   post "signup", to: "users#create"
 
-  resources :films, only: [:show, :index]
-  resources :reviews, only: [:show] do
+  resources :films, only: [:show, :index] do
+    resource :review, only: [:show]
+  end
+
+  resources :reviews, only: [:index] do
     resources :comments, only: [:create]
   end
+
   resources :comments, only: [:destroy] do
     resources :comments, only: [:create]
   end

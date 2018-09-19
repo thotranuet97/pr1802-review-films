@@ -30,6 +30,7 @@ en:
     formats:
       dd: "%d"
       mmm_yyyy: "%b %y"
+      dd_mmm_yyyy: "%d %b %y"
   activerecord:
     attributes:
       comment:

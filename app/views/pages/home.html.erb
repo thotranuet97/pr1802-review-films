@@ -31,9 +31,9 @@
   <div class="film-tabs">
     <div class="container">
       <h3 class="film-heading"><%= t ".spotlight_this_month" %>
-        <a href="#"><%= t ".see_all_movies" %>
-          <i class="fas fa-arrow-right"></i>
-        </a>
+        <%= link_to films_path do %>
+          <%= t ".see_all_movies" %><i class="fas fa-arrow-right"></i>
+        <% end %>
       </h3>
       <div class="film-content">
         <nav>
@@ -84,9 +84,9 @@
   <div class="film-trailers">
     <div class="container">
       <h3 class="film-heading"><%= t ".trailers_this_month" %>
-        <a href="#"><%= t ".see_all_movies" %>
-          <i class="fas fa-arrow-right"></i>
-        </a>
+        <%= link_to films_path do %>
+          <%= t ".see_all_movies" %><i class="fas fa-arrow-right"></i>
+        <% end %>
       </h3>
       <div class="film-content">
         <div class="trailer-item">
@@ -142,9 +142,9 @@
   <div class="film-reviews">
     <div class="container">
       <h3 class="film-heading"><%= t ".reviews_this_month" %>
-        <a href="#">
+        <%= link_to reviews_path do %>
           <%= t ".see_all_reviews" %><i class="fas fa-arrow-right"></i>
-        </a>
+        <% end %>
       </h3>
       <div class="row">
         <%= render partial: "review", collection: @this_month_reviews,

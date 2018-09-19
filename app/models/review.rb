@@ -8,6 +8,8 @@ class Review < ApplicationRecord
 
   validates_presence_of :title
 
+  delegate :name, to: :film, prefix: true
+
   mount_uploader :banner, ThumbnailUploader
   mount_uploader :thumbnail, ThumbnailUploader
 

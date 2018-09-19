@@ -64,6 +64,7 @@ en:
     review:
       review_title: "Review title"
       close: "Close"
+      view_review: "View review"
     rate-form:
       rate_this_movie: "Rate this movie"
       submit: "Submit"
@@ -98,6 +99,8 @@ en:
       share: "Share"
       thought: "thought"
       "on": "on"
+    review:
+      written_at: "Written at"
   users:
     create:
       signup_success: "Sign up success, please sign in!"
