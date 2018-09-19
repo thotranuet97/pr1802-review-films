@@ -1,37 +1,48 @@
 <div class="account">
-  <%= form_with url: login_path, local: true,
-    html: {class: "form-user"} do |f| %>
-    <fieldset>
-      <div class="form-group">
-        <%= f.email_field :email,
-          id: :email,
-          class: "form-control input-lg",
-          placeholder: t(".your_email_address") %>
-      </div>
-      <div class="form-group">
-        <%= f.password_field :password,
-          id: :password,
-          class: "form-control input-lg",
-          placeholder: t(".password") %>
-      </div>
-      <%= f.label :remember_me,
-        class: "custom-control custom-checkbox my-1 mr-sm-2" do %>
-        <%= f.check_box :remember_me, class: "custom-control-input" %>
-        <span class="custom-control-label"><%= t ".remember_me" %> </span>
-      <% end %>
-      <div class="form-group">
-        <%= f.submit t(".login_btn_title"),
-          class: "btn btn-lg btn-primary btn-block" %>
-      </div>
-    </fieldset>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <%= t ".new_user" %> <%= link_to t(".signup_btn_title"), signup_path %>
-      </li>
-      <li class="list-group-item">
-        <%= t ".forgot_password" %> <%= link_to t(".reset_password"),
-          new_password_reset_path %>
-      </li>
-    </ul>
-  <% end %>
+  <div class="form-wrapper">
+    <%= form_with url: login_path, local: true,
+      html: {class: "form-user"} do |f| %>
+      <fieldset>
+        <div class="form-group">
+          <%= f.email_field :email,
+            id: :email,
+            class: "form-control input-lg",
+            placeholder: t(".your_email_address") %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password,
+            id: :password,
+            class: "form-control input-lg",
+            placeholder: t(".password") %>
+        </div>
+        <%= f.label :remember_me,
+          class: "custom-control custom-checkbox my-1 mr-sm-2" do %>
+          <%= f.check_box :remember_me, class: "custom-control-input" %>
+          <span class="custom-control-label"><%= t ".remember_me" %> </span>
+        <% end %>
+        <div class="form-group">
+          <%= f.submit t(".login_btn_title"),
+            class: "btn btn-lg btn-primary btn-block" %>
+        </div>
+      </fieldset>
+      
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <%= t ".new_user" %> <%= link_to t(".signup_btn_title"), signup_path %>
+        </li>
+        <li class="list-group-item">
+          <%= t ".forgot_password" %> <%= link_to t(".reset_password"),
+            new_password_reset_path %>
+        </li>
+      </ul>
+    <% end %>
+    <div class="social-btns">
+      <button id="facebook-login" class="btn text-white">
+        <i class="fab fa-facebook-square"></i>
+        <span class="border-left fb"><%= t ".login_fb" %></span>
+      </button>
+      <div id="status-login"></div>
+      <div class="error-vote-poup"></div>
+    </div> 
+  </div>
 </div>
