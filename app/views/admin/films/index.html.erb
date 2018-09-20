@@ -28,7 +28,7 @@
               data: {confirm: t("delete_confirm")} %> |
         <%= link_to t(".view_film"), film_path(film.id) %> |
         <%= if film.review
-              link_to t(".review"), review_path(film.review)
+              link_to t(".review"), film_review_path(film)
             else
               link_to t(".write_review"), new_admin_film_review_path(film)
             end %>

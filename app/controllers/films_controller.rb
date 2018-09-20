@@ -2,7 +2,7 @@ class FilmsController < ApplicationController
   before_action :find_film, only: :show
 
   def show
-    @rate = @film.ratings.build
+    @rate = @film.ratings.find_or_initialize_by user_id: current_user&.id
 
     if params[:id_review]
       @review = Review.find_by id: params[:id_review]

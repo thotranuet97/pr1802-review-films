@@ -16,8 +16,6 @@ class Film < ApplicationRecord
   mount_uploader :poster, ThumbnailUploader
   mount_uploader :video_thumbnail, ThumbnailUploader
 
-  scope :publish, -> {where status: :publish}
-
   scope :order_created_desc, -> {order created_at: :desc}
 
   scope :order_released_desc, -> {order release_date: :desc}

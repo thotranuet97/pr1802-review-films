@@ -60,6 +60,8 @@ $(document).on("turbolinks:load", function() {
     $('#rate-value').val(rating);
     $('.message').html('You are rating film with '+rating+' stars.')
   });
+
+  // Review
   $('a.btn-quickview').click(function () {
     var review_id = $(this).attr('data-review-id');
     var href = $(this).attr('href');
