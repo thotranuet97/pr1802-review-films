@@ -84,6 +84,7 @@ ul{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   .form-login{
     background: #fff;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
@@ -137,7 +138,7 @@ ul{
   fieldset{
     width: 500px;
   }
-  form{
+  .form-wrapper{
     padding: 20px;
     padding-top: 40px;
     background: #fff;
@@ -154,11 +155,11 @@ ul{
 }
 
 //Category link show
-.cat-show-link {
+.cat-show-link{
   color: white;
 } 
 
-#search-in-cat {
+#search-in-cat{
   position: relative;
   button {
     position: absolute;
@@ -174,4 +175,20 @@ ul{
 
 .item-detail{
   display: block;
+}
+
+#facebook-login{
+  background-color: #29487d;
+}
+
+.fab{
+  margin-right: 10px;
+}
+
+.fb{
+  padding-left: 10px;
+}
+.social-btns{
+  display: flex;
+  justify-content: center;
 }
