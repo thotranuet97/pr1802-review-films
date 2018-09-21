@@ -13,6 +13,8 @@ en:
     admin:
       title: "PR1802 Review Films Admin"
       header:
+        review_admin: "Review Films Admin"
+        public_site: "Public site"
         logout: "Logout"
       sidebar:
         films: "Films"

@@ -124,7 +124,3 @@ en:
         email_placeholder: "Enter email"
         password: "Password"
         password_placeholder: "Enter password"
-  layouts:
-    admin:
-      header:
-        company: "Glory team"
