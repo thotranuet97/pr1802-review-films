@@ -13,12 +13,12 @@
       <tr>
         <td><%= review.id %></td>
         <td><%= review.title %></td>
-        <td><%= link_to review.film.name, film_path(review.film) %></td>
+        <td><%= link_to review.film_name, film_path(review.film) %></td>
         <td>
           <%= link_to t("edit"), edit_admin_film_review_path(review.film) %> |
           <%= link_to t("delete"), admin_film_review_path(review.film), method: :delete,
                 data: {confirm: t("delete_confirm")} %> |
-          <%= link_to t(".view"), review_path(review) %>
+          <%= link_to t(".view"), film_review_path(review.film) %>
         </td>
         <td><%= review.created_at %></td>
       </tr>

@@ -4,10 +4,8 @@ class AdminController < ApplicationController
   layout "admin"
 
   private
-
   def authenticated_user!
-    unless current_user.admin?
-      redirect_to root_url, flash: {danger: t(".unauthorized")}
-    end
+    return if current_user.admin?
+    redirect_to root_url, flash: {danger: t("admin.unauthorized")}
   end
 end
