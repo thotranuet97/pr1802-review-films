@@ -1,0 +1,14 @@
+<%= form_for @rate do |f| %>
+  <div class="modal-body">
+    <div class="field">
+      <%= f.hidden_field :film_id, value: @film.id %>
+      <%= f.hidden_field :rate, id: "rate-value" %>
+      <div id="ratefilm"></div>
+      <p class="message"></p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit t ".submit", class: "btn btn-submit",
+      id: "btn-rate" %>
+  </div>
+<% end %>

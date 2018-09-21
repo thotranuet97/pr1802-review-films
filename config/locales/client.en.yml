@@ -67,6 +67,8 @@ en:
       view_review: "View review"
     rate-form:
       rate_this_movie: "Rate this movie"
+      edit_your_rate: "Edit your rate"
+    rate-form-detail:
       submit: "Submit"
     review-detail:
       no_review_title: "No review title"
@@ -93,6 +95,9 @@ en:
     create:
       rating_created: "Rating created success!"
       rating_created_error: "Rating creating has errors!"
+    update:
+      rating_updated: "Rating updated!"
+      rating_updated_error: "Rating updated has errors!"
   reviews:
     show:
       comment: "comment"

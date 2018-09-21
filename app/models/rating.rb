@@ -9,7 +9,7 @@ class Rating < ApplicationRecord
   private
 
   def update_average_ratings
-    average_ratings = self.film.ratings.collect(&:rate).sum / self.film.ratings.count.to_f
+    average_ratings = self.film.ratings.collect(&:rate).sum / self.film.ratings.count.to_f.round(2)
     film.update_attributes average_ratings: average_ratings
   end
 end

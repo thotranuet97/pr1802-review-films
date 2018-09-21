@@ -36,14 +36,10 @@
             <% if user_signed_in? %>
               <span>
                 <i class="far fa-user"></i>
-                Welcome <%= link_to current_user.name, current_user %>
+                <%= link_to current_user.name, admin_path if current_user.admin? %>
               </span>
-              <%= link_to t(".admin_panel"), admin_path if current_user.admin? %>
               <%= link_to t(".logout"), logout_path, method: :delete  %>
             <% else %>
-              <span>
-                Welcome Guest
-              </span>
               <%= link_to t(".login"), login_path %>
             <% end %>
           </div>
