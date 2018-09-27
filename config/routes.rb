@@ -35,4 +35,6 @@ Rails.application.routes.draw do
   end
   resources :ratings
   resources :categories, only: [:show]
+
+  resources :export_films, only: [:index]
 end

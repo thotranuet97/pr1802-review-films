@@ -39,6 +39,8 @@ en:
         statuses:
           publish: "Publish"
           pending: "Pending"
+        export_xls: "Export to xls"
+        export_csv: "Export to csv"
       show:
         name: "Name"
         write_review: "Write review"
