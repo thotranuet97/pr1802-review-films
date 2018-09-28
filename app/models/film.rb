@@ -81,4 +81,13 @@ class Film < ApplicationRecord
     where("release_date between ? and ?", "#{start_date}", "#{end_date}")
       .distinct "release_date"
   end
+
+  def self.to_csv options = {}
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |film|
+        csv << film.attributes.values_at(*column_names)
+      end
+    end
+  end
 end
