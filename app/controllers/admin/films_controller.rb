@@ -1,7 +1,7 @@
 class Admin::FilmsController < AdminController
   before_action :find_film, only: [:edit, :update, :show, :destroy]
   def index
-    @films = Film.paginate page: params[:page],
+    @films = Film.includes(:categories, :review).paginate page: params[:page],
       per_page: Settings.admin.films.per_page
     @films = @films.order_created_desc
   end

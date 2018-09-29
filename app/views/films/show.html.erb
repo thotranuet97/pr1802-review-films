@@ -1,6 +1,6 @@
 <div class="film-main">
   <div class="film-banner"
-    style="background-image: url(<%=  @film.poster_url %>)">
+       style="background-image: url(<%=  @film.poster_url %>)">
   </div>
   <div class="film-wrapper">
     <div class="container">
@@ -8,16 +8,19 @@
         <div class="col-md-3">
           <div class="thumb">
             <% if @film.thumbnail.present? %>
-            <%= image_tag @film.thumbnail_url %>
+              <%= image_tag @film.thumbnail_url %>
             <% else %>
-            <%= image_tag "400x650.png" %>
+              <%= image_tag "400x650.png" %>
             <% end %>
           </div>
           <div class="film-info">
             <h4><%= t ".movie_info" %></h4>
             <ul>
               <li>
-                <span><%= t ".actor" %></span><%= @film.actors %>
+                <span><%= t ".actors" %></span><%= @film.actors %>
+              </li>
+              <li>
+                <span><%= t ".directors" %></span><%= @film.directors %>
               </li>
               <li>
                 <span><%= t ".released_date" %></span><%= @film.release_date %>
@@ -41,15 +44,15 @@
               <ul class="genres">
                 <% @film.categories.each do |category| %>
                   <li>
-                  <%= link_to category.name, category_path(category) %>
+                    <%= link_to category.name, category_path(category) %>
                   </li>
                 <% end %>
               </ul>
               <span class="duration"><%= @film.duration %><%= t ".min" %></span>
-                <div class="rate" id="rate" data-rate=<%= @film.average_ratings ? @film.average_ratings : 0 %>>
+              <div class="rate" id="rate" data-rate=<%= @film.average_ratings ? @film.average_ratings : 0 %>>
                 <%= t ".rating" %><span id="rateYo">
-              </span>
-              <span id="count-rate">( <%= @film.raters.count %> )</span>
+                </span>
+                <span id="count-rate">( <%= @film.raters.count %> )</span>
               </div>
               <%= render "shared/social_share" %>
               <%= render "review" %>
@@ -65,18 +68,18 @@
             <%= raw @film.introduction %>
           </div>
           <% if @film.trailer.present? %>
-          <div class="film-trailer">
-            <h3>
-              <i class="fas fa-video"></i><%= t ".movie_trailer" %></h3>
-            <a href="<%= @film.trailer %>" data-lity class="trailer">
-              <% if @film.video_thumbnail.present? %>
-                <%= image_tag @film.video_thumbnail_url, class: "thumb-video" %>
-              <% else %>
-                <%= image_tag "650x400.png", class: "thumb-video" %>
-              <% end %>
-              <%= image_tag "play.png", class: "play" %>
-            </a>
-          </div>
+            <div class="film-trailer">
+              <h3>
+                <i class="fas fa-video"></i><%= t ".movie_trailer" %></h3>
+              <a href="<%= @film.trailer %>" data-lity class="trailer">
+                <% if @film.video_thumbnail.present? %>
+                  <%= image_tag @film.video_thumbnail_url, class: "thumb-video" %>
+                <% else %>
+                  <%= image_tag "650x400.png", class: "thumb-video" %>
+                <% end %>
+                <%= image_tag "play.png", class: "play" %>
+              </a>
+            </div>
           <% end %>
           <%= render "related" %>
         </div>

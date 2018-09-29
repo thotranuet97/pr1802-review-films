@@ -11,9 +11,6 @@
         <%= link_to t("delete"), admin_category_path(category), method: :delete, data:{confirm: t("delete_confirm")} %>
       </li>
     </ul>
-    <span>
-      Only admin to action
-    </span>
   </td>
   <td>
     <%= category.film_categories.count %>
