@@ -4,7 +4,7 @@ class Admin::ReviewsController < AdminController
     :destroy]
 
   def index
-    @reviews = Review.paginate page: params[:page],
+    @reviews = Review.includes(:film).paginate page: params[:page],
       per_page: Settings.admin.reviews.per_page
   end
 

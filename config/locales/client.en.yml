@@ -52,7 +52,8 @@ en:
       date: "%d-%m-%Y"
     show:
       movie_info: "Movie info"
-      actor: "Actor:"
+      actors: "Actors:"
+      directors: "Directors:"
       released_date: "Released Date:"
       genres: "Genres:"
       country: "Country:"
@@ -75,7 +76,6 @@ en:
       have_no_review_for_this_movie: "Have no review for this movie"
       close: "Close"
     related:
-      waiting: "Waiting..."
       rating: "Rating:"
   password_resets:
     new:

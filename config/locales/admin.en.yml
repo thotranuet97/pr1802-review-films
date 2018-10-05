@@ -111,6 +111,8 @@ en:
         name: "Name"
         email: "Email"
         join_date: "Join date"
+        comments_count: "Comments"
+        comments_count_val: "%{count} comments"
       create:
         user_created: "User created success!"
         user_created_error: "User creating has errors!"

@@ -10,7 +10,11 @@
     </div>
     <div class="block-section">
       <h3><%= t ".join_date" %></h3>
-      <%= @user.created_at%>
+      <%= @user.created_at %>
+    </div>
+    <div class="block-section">
+      <h3><%= t ".comments_count" %></h3>
+      <%= link_to t(".comments_count_val", count: @user.comments.count), admin_comments_path(users: @user.id) %>
     </div>
   </div>
 </div>

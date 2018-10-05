@@ -1,7 +1,9 @@
 class Admin::CommentsController < AdminController
   before_action :find_comment, only: [:destroy]
   def index
-    @comments = Comment.paginate page: params[:page],
+    @comments = Comment.includes(:user, review: :film).all
+    @comments = @comments.by_users params[:users] if params[:users]
+    @comments = @comments.order_created_desc.paginate page: params[:page],
       per_page: Settings.admin.comments.per_page
   end
 
